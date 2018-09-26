@@ -306,7 +306,7 @@
 				<li class="navigation-header"><span>Main</span> <i
 					class="zmdi zmdi-more"></i></li>
 
-				<li><a href="javascript:void(0);" data-toggle="collapse"
+				<li><a href="page1" data-toggle="collapse"
 					data-target="#ecom_dr"><div class="pull-left">
 							<i class="zmdi zmdi-shopping-basket mr-20"></i><span
 								class="right-nav-text">วิเคราะห์สินเชื่อ</span>
