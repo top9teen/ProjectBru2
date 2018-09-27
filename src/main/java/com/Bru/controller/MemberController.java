@@ -34,6 +34,11 @@ public class MemberController {
 		
 		return "member/page1";
 	}
+	@RequestMapping(value="/index2")
+	public String bbbb() {
+		
+		return "member/welcome";
+	}
 	
 	@RequestMapping(value = "/gotologin")
 	public String login(String email, String password, HttpServletRequest request) {
@@ -164,9 +169,9 @@ public class MemberController {
 
 		}
 
-		@RequestMapping(value = "/123")
+		@RequestMapping(value = "/gotopage2")
 		public String test1() {
-			return "member/CreditForm";
+			return "member/welcome";
 		}
 		
 	// end class

@@ -3,14 +3,18 @@
 	
 	<script type="text/javascript">
 	$(document).ready(function() {
+		var vvvde = document.getElementById("bbb");
 		anElement = new AutoNumeric("#salary");
 		anElement = new AutoNumeric("#salary2");
 		 $('input[type="radio"]').click(function () {
 		        if ($(this).attr("value") == "2") {
 		            $(".box").hide('slow');
+		            vvvde.value ="2";
 		        }
 		        if ($(this).attr("value") == "1") {
 		            $(".box").show('slow');
+		            vvvde.value ="1";
+		            
 		        }
 		        
 		 });     
@@ -295,12 +299,12 @@ function myFunctionck() {
 					"foSalary" : $('#salary').val(),
 					"foYearOfService" : $('#foYearOfService').val(),
 					"foMonthOfService" : $('#foMonthOfService').val(),
-					"foBureauPaidedStatusPaid" : $('#bureauPaidedStatusNo').val(),
+					"foBureauPaidedStatusPaid" : $('#bureauPaidedStatusPaid').val(),
 					"foPropertyProjectName" : $('#propertyProjectName').val(),
 					"foProvince" : $('#province').val(),
 					"foAmphur" : $('#amphur').val(),
 					"foDistrict" : $('#district').val(),
-					"foRadio" : $('#Radio').val(),
+					"foRadio" : $('#bbb').val(),
 					"foReMonny" : $('#remon').val(),
 					"mePrefix2" : $('#prefix2').val(),
 					"meFname2" : $('#fname2').val(),
@@ -316,7 +320,7 @@ function myFunctionck() {
 					"meMonthOfService2" : $('#monthOfService2').val()};
 					
 					
-						/* $.ajax({
+						 $.ajax({
 							type : "POST",
 							url : "http://localhost:8090/bank2",
 							data : JSON.stringify(formregiterBean2),
@@ -327,7 +331,7 @@ function myFunctionck() {
 								
 			
 							}
-						}); */
+						}); 
 						
 						$.ajax({
 							type : "POST",
@@ -340,7 +344,10 @@ function myFunctionck() {
 								
 			
 							}
+						
+							
 						});
+					
 						
 		}
 		function checkID(id) 

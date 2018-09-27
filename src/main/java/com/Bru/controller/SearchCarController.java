@@ -4,9 +4,10 @@ package com.Bru.controller;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.text.DateFormat;
+
 import java.util.List;
 
+import org.elasticsearch.common.netty.util.internal.DetectionUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,9 +26,11 @@ import com.Bru.Bean.ProvinceBean;
 import com.Bru.Bean.ReceiptBean;
 import com.Bru.Bean.SimpleTestBean;
 import com.Bru.Bean.YearBean;
+import com.Bru.Dao.CkDao;
 import com.Bru.Dao.FormRegisterDao;
 import com.Bru.Dao.ProvinceDao;
 import com.Bru.Dao.SearchCarDao;
+
 
 @RestController
 public class SearchCarController {
@@ -39,8 +42,9 @@ public class SearchCarController {
 	ProvinceDao provinceDao;
 	@Autowired
 	FormRegisterDao formRegisterDao;
-	/*@Autowired
-	FormRegisterDao formRegisterDao;*/
+	@Autowired
+	CkDao ckDao;
+
 	@RequestMapping(value="/year")
 	public List<YearBean> xxx() throws SQLException{
 		List<YearBean> list = new ArrayList<YearBean>();
@@ -112,17 +116,32 @@ public class SearchCarController {
 		return bean;
 	}
 	@RequestMapping(value = "/bank2333", method = RequestMethod.POST)
-	public String bank2(@RequestBody FormregiterBean2 formregiterBean2) throws SQLException {
+	public void bank2(@RequestBody FormregiterBean2 formregiterBean2) throws SQLException {
+		FormregiterBean nos = new FormregiterBean();
+		nos.setFoDate(new Date(2018));
+		AmphurBean amp = new AmphurBean();
+		ProvinceBean pro = new ProvinceBean();
+		DistrictBean dis = new DistrictBean();
+		int a = Integer.valueOf(formregiterBean2.getFoAmphur());
+		int b =Integer.valueOf(formregiterBean2.getFoProvince());
+		int c =Integer.valueOf(formregiterBean2.getFoDistrict());
+		amp = ckDao.amphur(a);
+		pro = ckDao.province(b);
+		dis = ckDao.dis(c);
+		formregiterBean2.setFoAmphur(amp.getAmphurName());
+		formregiterBean2.setFoProvince(pro.getProvinceName());
+		formregiterBean2.setFoDistrict(dis.getDistrictName());
+		formRegisterDao.formRegister(formregiterBean2,nos);
+		if (formregiterBean2.getFoRadio().equals("1")) {
+			IdFormReBean bean2 = new IdFormReBean();
+			bean2 = formRegisterDao.idform(formregiterBean2);
 		
-	
-		formRegisterDao.formRegister(formregiterBean2);
-		
+			formregiterBean2.setMeId(bean2.getFoId());
+			formRegisterDao.formRegisterff(formregiterBean2);
+		} else {
+			
+		}
 
-		
-
-		
-
-		return "member/welcome";
 	}
 // end class  
 }

@@ -29,7 +29,7 @@ FormregiterBean bean = null;
 				<!-- Row -->
 				<div class="row">
 				<form action="gotopage2" OnSubmit="return fncSubmit2();"
-	name="gotopage3">
+	name="gotopage3" >
 					<div class="col-lg-5 col-md-6 col-sm-12 col-xs-12">
 						<div class="panel panel-default card-view panel-refresh">
 							<div class="refresh-container">
@@ -639,13 +639,13 @@ FormregiterBean bean = null;
 				<div class="form-group">
 					<input type="radio" name="bureauPaidedStatusPaid" value="ไม่เคย"
 						class="ng-pristine ng-untouched ng-valid ng-not-empty"
-						checked="checked"> <label for="no"
+						checked="checked" id="bureauPaidedStatusPaid"> <label for="no"
 						id="bureauPaidedStatusNo">ไม่เคย</label>
 				</div>
 			</div>
 			<div class="col-xs-12 col-sm-5 col-md-5 form-control-field">
 				<div class="form-group">
-					<input type="radio" name="bureauPaidedStatusPaid" value="เคย
+					<input type="radio"  id="bureauPaidedStatusPaid" name="bureauPaidedStatusPaid" value="เคย
 						และยังไม่ได้ชำระคืน"
 						class="ng-pristine ng-untouched ng-valid ng-not-empty">
 					<label for="debt" id="bureauPaidedStatusNo">เคย
@@ -654,7 +654,7 @@ FormregiterBean bean = null;
 			</div>
 			<div class="col-xs-12 col-sm-4 col-md-4 form-control-field">
 				<div class="form-group">
-					<input type="radio" name="bureauPaidedStatusPaid" value="เคย
+					<input type="radio" id="bureauPaidedStatusPaid" name="bureauPaidedStatusPaid" value="เคย
 						แต่ชำระคืนแล้ว"
 						class="ng-pristine ng-untouched ng-valid ng-not-empty">
 					<label for="paid" id="bureauPaidedStatusNo">เคย
@@ -776,7 +776,7 @@ FormregiterBean bean = null;
 					<div class="form-group">
 						<div>
 							<label class="containerRadio"> <input type="radio"
-								name="Radio" value="1" class="" id="Radio" required> <span
+								name="Radio" value="1" class="" id="bbbv" required> <span
 								class="checkmark">มีผู้กู้ร่วม</span>
 							</label>
 						</div>
@@ -785,9 +785,9 @@ FormregiterBean bean = null;
 				<div class="col-xs-12 col-md-8 col-sm-3 form-control-field">
 					<div class="form-group">
 						<label class="containerRadio"> <input type="radio"
-							name="Radio" value="2" class="" id="Radio" required
+							name="Radio" value="2" class="" id="bbbv" required
 							checked="checked"> <span class="checkmark">ไม่มี</span>
-
+							<input id="bbb" type="hidden" value="2">
 						</label>
 					</div>
 				</div>
