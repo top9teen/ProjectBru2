@@ -6,7 +6,6 @@
 	<groupId>com.Bru</groupId>
 	<artifactId>ProjectBru2</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
 
 	<name>ProjectBru2</name>
 	<description>com.Bru</description>
