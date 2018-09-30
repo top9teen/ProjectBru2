@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <jsp:include page="../Template/heder.jsp"></jsp:include>
-<title>Insert title here</title>
+
 </head>
 <body>
 <!--Preloader-->
@@ -33,11 +33,11 @@
 			<div class="page-wrapper pa-0 ma-0 auth-page">
 				<div class="container-fluid">
 					<!-- Row -->
-					<div class="table-struct full-width full-height">
+					<div class="table-struct full-width full-height col-sm-10">
 						<div class="table-cell vertical-align-middle auth-form-wrap">
 							<div class="auth-form  ml-auto mr-auto no-float">
 								<div class="row">
-									<div class="col-sm-12 col-xs-12">
+									<div class="col-sm-10 col-xs-10">
 										<div class="mb-30">
 											<h3 class="text-center txt-dark mb-10">Sign up to Elmer</h3>
 											<h6 class="text-center nonecase-font txt-grey">Enter your details below</h6>

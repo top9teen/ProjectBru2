@@ -4,8 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
 <jsp:include page="../Template/heder.jsp"></jsp:include>
-<title>Insert title here</title>
+
 </head>
 <body>
 
@@ -46,11 +47,11 @@
 										<div class="form-wrap">
 											<form action="gotologin">
 												<div class="form-group">
-													<label class="control-label mb-10" for="exampleInputEmail_2">Email address</label>
+													<label class="control-label " for="exampleInputEmail_2">Email address</label>
 													<input type="email" class="form-control" required="" id="exampleInputEmail_2" placeholder="Enter email" name="email">
 												</div>
 												<div class="form-group">
-													<label class="pull-left control-label mb-10" for="exampleInputpwd_2">Password</label>
+													<label class="pull-left control-label " for="exampleInputpwd_2">Password</label>
 												
 													<div class="clearfix"></div>
 													<input type="password" class="form-control" required="" id="exampleInputpwd_2" placeholder="Enter pwd" name ="password">
