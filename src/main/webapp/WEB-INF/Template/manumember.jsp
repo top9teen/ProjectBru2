@@ -6,7 +6,7 @@
 		<div class="mobile-only-brand pull-left">
 			<div class="nav-header pull-left">
 				<div class="logo-wrap">
-					<a href=""> <img class="brand-img"
+					<a href="index2"> <img class="brand-img"
 						src="dist/img/logo.png" alt="brand" /> <span class="brand-text">ระบบสินเชื่อรถยนต์</span>
 					</a>
 				</div>
@@ -315,7 +315,7 @@
 							<span class="label label-primary">hot</span>
 						</div>
 						<div class="clearfix"></div></a></li>
-				<li><a href="javascript:void(0);" data-toggle="collapse"
+				<li><a href="page2" data-toggle="collapse"
 					data-target="#app_dr"><div class="pull-left">
 							<i class="zmdi zmdi-apps mr-20"></i><span class="right-nav-text">รายการสินเชื่อ
 							</span>
@@ -323,6 +323,7 @@
 						<div class="pull-right">
 							
 						</div>
+						
 						<div class="clearfix"></div></a></li>
 
 				<li><hr class="light-grey-hr mb-10" /></li>

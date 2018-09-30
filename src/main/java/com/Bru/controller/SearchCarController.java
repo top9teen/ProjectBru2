@@ -1,10 +1,10 @@
 package com.Bru.controller;
 
 
-import java.sql.Date;
+
 import java.sql.SQLException;
 import java.util.ArrayList;
-
+import java.util.Date;
 import java.util.List;
 
 
@@ -118,7 +118,7 @@ public class SearchCarController {
 	@RequestMapping(value = "/bank2333", method = RequestMethod.POST)
 	public void bank2(@RequestBody FormregiterBean2 formregiterBean2) throws SQLException {
 		FormregiterBean nos = new FormregiterBean();
-		nos.setFoDate(new Date(2018));
+		nos.setFoDate(new Date());
 		AmphurBean amp = new AmphurBean();
 		ProvinceBean pro = new ProvinceBean();
 		DistrictBean dis = new DistrictBean();

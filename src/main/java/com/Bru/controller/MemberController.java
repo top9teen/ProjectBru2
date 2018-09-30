@@ -173,6 +173,9 @@ public class MemberController {
 		public String test1() {
 			return "member/welcome";
 		}
-		
-	// end class
+		@RequestMapping(value = "/page2")
+		public String page2() {
+			return "member/page2";
+		}
+	// end class 
 }
