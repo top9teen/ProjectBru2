@@ -329,7 +329,7 @@
 				<li><hr class="light-grey-hr mb-10" /></li>
 				<li class="navigation-header"><span>component</span> <i
 					class="zmdi zmdi-more"></i></li>
-				<li><a href="javascript:void(0);" data-toggle="collapse"
+				<li><a href="page3" data-toggle="collapse"
 					data-target="#ui_dr"><div class="pull-left">
 							<i class="zmdi zmdi-smartphone-setup mr-20"></i><span
 								class="right-nav-text">จ่ายค่างวด</span>

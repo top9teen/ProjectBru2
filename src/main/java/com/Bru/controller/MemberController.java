@@ -187,5 +187,14 @@ public class MemberController {
 			request.getSession().setAttribute("list2", list);
 			return "member/page2";
 		}
-	// end class 
+		@RequestMapping(value = "/page3")
+		public String page3(HttpServletRequest request) throws SQLException {
+			List<FormregiterBean> list = new ArrayList<>();
+			email1 ="top@top.com";
+			list=formReDao.selre(email1);
+			
+			request.getSession().setAttribute("list2", list);
+			return "member/page3";
+		}
+	// end class  
 }
