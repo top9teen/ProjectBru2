@@ -1,6 +1,8 @@
 package com.Bru.controller;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -13,15 +15,17 @@ import com.Bru.Bean.FormregiterBean;
 import com.Bru.Bean.LoginBean;
 import com.Bru.Bean.LoginBeanSimple;
 import com.Bru.Bean.MiradoBean;
-import com.Bru.Bean.SaveTable1Bean;
+
 import com.Bru.Bean.YearCarBean;
+import com.Bru.Dao.FormReDao;
 import com.Bru.Dao.LoginDao;
 import com.Bru.Dao.ProvinceDao;
 
 @Controller
 public class MemberController {
 
-	
+	@Autowired
+	FormReDao formReDao;
 	@Autowired
 	LoginDao loginDao ;
 	@Autowired
@@ -173,8 +177,14 @@ public class MemberController {
 		public String test1() {
 			return "member/welcome";
 		}
+		// sel dataTable1
 		@RequestMapping(value = "/page2")
-		public String page2() {
+		public String page2(HttpServletRequest request) throws SQLException {
+			List<FormregiterBean> list = new ArrayList<>();
+			email1 ="top@top.com";
+			list=formReDao.selre(email1);
+			
+			request.getSession().setAttribute("list2", list);
 			return "member/page2";
 		}
 	// end class 

@@ -179,7 +179,7 @@ public class FormRegisterDao {
 				bean.setFoAmphur(rs.getString("fo_amphur"));
 				bean.setFoDistrict(rs.getString("fo_district"));
 				bean.setFoRadio(rs.getString("fo_Radio"));
-
+				bean.setFoDate(rs.getDate("fo_date"));
 			}
 
 		} catch (Exception e) {

@@ -320,18 +320,7 @@ function myFunctionck() {
 					"meMonthOfService2" : $('#monthOfService2').val()};
 					
 					
-						 $.ajax({
-							type : "POST",
-							url : "http://localhost:8090/bank2",
-							data : JSON.stringify(formregiterBean2),
-							contentType : "application/json; charset=utf-8",
-							dataType : "json",
-							success : function(msg) {
-								console.log('Success')
-								
-			
-							}
-						}); 
+						
 						
 						$.ajax({
 							type : "POST",
@@ -340,14 +329,27 @@ function myFunctionck() {
 							contentType : "application/json; charset=utf-8",
 							dataType : "json",
 							success : function(msg) {
-								console.log('Success')
+								console.log('secs')
+								console.log(msg.foId)
 								
 			
 							}
 						
 							
 						});
-					
+						
+						 $.ajax({
+								type : "POST",
+								url : "http://localhost:8090/bank2",
+								data : JSON.stringify(formregiterBean2),
+								contentType : "application/json; charset=utf-8",
+								dataType : "json",
+								success : function(msg) {
+									console.log('Success')
+									
+				
+								}
+							}); 
 						
 		}
 		function checkID(id) 

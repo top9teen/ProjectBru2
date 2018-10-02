@@ -30,6 +30,7 @@ import com.Bru.Dao.CkDao;
 import com.Bru.Dao.FormRegisterDao;
 import com.Bru.Dao.ProvinceDao;
 import com.Bru.Dao.SearchCarDao;
+import com.Bru.Bean.FormMemBean;
 
 
 @RestController
@@ -116,12 +117,15 @@ public class SearchCarController {
 		return bean;
 	}
 	@RequestMapping(value = "/bank2333", method = RequestMethod.POST)
-	public void bank2(@RequestBody FormregiterBean2 formregiterBean2) throws SQLException {
+	public String bank2(@RequestBody FormregiterBean2 formregiterBean2) throws SQLException {
 		FormregiterBean nos = new FormregiterBean();
+		String ae ="";
+		IdFormReBean bean2 = new IdFormReBean();
 		nos.setFoDate(new Date());
 		AmphurBean amp = new AmphurBean();
 		ProvinceBean pro = new ProvinceBean();
 		DistrictBean dis = new DistrictBean();
+		
 		int a = Integer.valueOf(formregiterBean2.getFoAmphur());
 		int b =Integer.valueOf(formregiterBean2.getFoProvince());
 		int c =Integer.valueOf(formregiterBean2.getFoDistrict());
@@ -133,15 +137,33 @@ public class SearchCarController {
 		formregiterBean2.setFoDistrict(dis.getDistrictName());
 		formRegisterDao.formRegister(formregiterBean2,nos);
 		if (formregiterBean2.getFoRadio().equals("1")) {
-			IdFormReBean bean2 = new IdFormReBean();
-			bean2 = formRegisterDao.idform(formregiterBean2);
 		
+			bean2 = formRegisterDao.idform(formregiterBean2);
+			ae = String.valueOf(bean2.getFoId());
 			formregiterBean2.setMeId(bean2.getFoId());
 			formRegisterDao.formRegisterff(formregiterBean2);
 		} else {
 			
 		}
+return ae ;
+	}
+	@RequestMapping(value="/FFF", method = RequestMethod.POST)
+	public FormregiterBean bean2212(@RequestBody SimpleTestBean simpleTestBean) throws SQLException{
+		
+		FormregiterBean bean = new FormregiterBean();
+		Integer x = Integer.valueOf(simpleTestBean.getXxx());
 
+		bean  = formRegisterDao.vvvv(x);
+		return bean;
+	}
+	@RequestMapping(value="/MFD", method = RequestMethod.POST)
+	public FormMemBean bean22ss(@RequestBody SimpleTestBean simpleTestBean) throws SQLException{
+		
+		FormMemBean bean = new FormMemBean();
+		Integer x = Integer.valueOf(simpleTestBean.getXxx());
+
+		bean  = formRegisterDao.vvvv2(x);
+		return bean;
 	}
 // end class  
 }
