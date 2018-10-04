@@ -15,11 +15,13 @@ import com.Bru.Bean.FormregiterBean;
 import com.Bru.Bean.LoginBean;
 import com.Bru.Bean.LoginBeanSimple;
 import com.Bru.Bean.MiradoBean;
-
+import com.Bru.Bean.ReceiptBean;
+import com.Bru.Bean.SimpleTestBean;
 import com.Bru.Bean.YearCarBean;
 import com.Bru.Dao.FormReDao;
 import com.Bru.Dao.LoginDao;
 import com.Bru.Dao.ProvinceDao;
+import com.Bru.Dao.TransferDao;
 
 @Controller
 public class MemberController {
@@ -30,7 +32,8 @@ public class MemberController {
 	LoginDao loginDao ;
 	@Autowired
 	ProvinceDao provinceDao;
-	
+	@Autowired
+	TransferDao transferDao;
 	String email1 ;
 	
 	@RequestMapping(value="/page1")
@@ -189,12 +192,56 @@ public class MemberController {
 		}
 		@RequestMapping(value = "/page3")
 		public String page3(HttpServletRequest request) throws SQLException {
-			List<FormregiterBean> list = new ArrayList<>();
+
+			SimpleTestBean bean = new SimpleTestBean();
 			email1 ="top@top.com";
-			list=formReDao.selre(email1);
-			
-			request.getSession().setAttribute("list2", list);
+		
+			bean.setEmail(email1);
+			request.getSession().setAttribute("bean",bean );
 			return "member/page3";
 		}
-	// end class  
+		
+		@RequestMapping(value = "/repassword")
+		public String repassword(Model model){
+			
+				model.addAttribute("re", "");
+			
+			
+			return "member/page4";
+		}
+		
+		@RequestMapping(value = "/refass")
+		public String refass(Model model,String newpass,String repassed ) throws SQLException{
+			LoginBean bean = new LoginBean();
+			LoginBeanSimple beansim = new LoginBeanSimple();
+			beansim.setEmail(email1);
+			beansim.setPassword(repassed);
+			try {
+				bean = loginDao.login(beansim);
+		
+				if (bean.getLoPassword() != null) {
+					 loginDao.sssser21(email1,newpass);
+				
+					model.addAttribute("re", "L");
+				}else if(bean.getLoPassword() == null) {
+					model.addAttribute("re", "F");
+				}
+					
+				
+			
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+			return "member/page4";
+		}
+		@RequestMapping(value = "/Transfer")
+		public String Transfer(HttpServletRequest requst) throws SQLException {
+				List<ReceiptBean> list = new ArrayList<>();
+				email1 ="top@top.com";
+			list = transferDao.Trensasda(email1);
+			requst.getSession().setAttribute("list", list);
+			return "member/Transfer";
+		}
+	// end class   
 }

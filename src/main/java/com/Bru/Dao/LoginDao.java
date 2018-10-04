@@ -130,5 +130,30 @@ public void register (LoginBeanSimple beansim) throws SQLException{
 	
 	
 }
+
+
+public void sssser21(String email , String repass) throws SQLException {
+
+	ConnectDB con = new ConnectDB();
+	Connection conn = con.openConnect();
+	PreparedStatement prepared = null;
+	StringBuilder sql = new StringBuilder();
+
+	try {
+		sql.append(" UPDATE usertable SET lo_password = ?  WHERE  lo_email = ? ");
+		prepared = conn.prepareStatement(sql.toString());
+
+		prepared.setString(1, repass);
+		prepared.setString(2, email);
+
+		prepared.executeUpdate();
+
+	} catch (Exception e) {
+		// TODO: handle exception
+	} finally {
+		conn.close();
+	}
+
+}
 	// end class
 }

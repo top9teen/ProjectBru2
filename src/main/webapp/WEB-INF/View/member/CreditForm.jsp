@@ -442,7 +442,7 @@ FormregiterBean bean = null;
 					<div class="input textAlign-left position-relative">
 						<input type="text" id="foMobilePhone"
 							class="form-control fontFamily-thonburi fontSize-s boxShadow-none ng-pristine ng-untouched ng-valid ng-not-empty"
-							src="src" name="mobilePhone" maxlength="10">
+							src="src" name="mobilePhone" maxlength="10" data-mask="(999) 999-9999">
 					</div>
 
 				</div>

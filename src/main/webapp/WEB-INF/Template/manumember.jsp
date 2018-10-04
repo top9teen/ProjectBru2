@@ -337,7 +337,7 @@
 						
 						<div class="clearfix"></div></a>
 					</li>
-				<li><a href="javascript:void(0);" data-toggle="collapse"
+				<li><a href="Transfer" data-toggle="collapse"
 					data-target="#form_dr"><div class="pull-left">
 							<i class="zmdi zmdi-edit mr-20"></i><span class="right-nav-text">ประวัติการจ่ายเงิน</span>
 						</div>
@@ -346,7 +346,7 @@
 						</div>
 						<div class="clearfix"></div></a>
 				</li>
-				<li><a href="javascript:void(0);" data-toggle="collapse"
+				<li><a href="repassword" data-toggle="collapse"
 					data-target="#chart_dr"><div class="pull-left">
 							<i class="zmdi zmdi-chart-donut mr-20"></i><span
 								class="right-nav-text">เปลี่ยนรหัสผ่าน </span>
@@ -362,7 +362,7 @@
 				<li><hr class="light-grey-hr mb-10" /></li>
 				<li class="navigation-header"><span>ช่องทางการติดต่อ</span> <i
 					class="zmdi zmdi-more"></i></li>
-				<li><a href="javascript:void(0);" data-toggle="collapse"
+				<li><a target="_blank" href="https://web.facebook.com/kritkrai.rakmit" data-toggle="collapse"
 					data-target="#pages_dr"><div class="pull-left">
 							<i class="zmdi zmdi-google-pages mr-20"></i><span
 								class="right-nav-text">ติดต่อเราทาง Facebook</span>
@@ -370,7 +370,7 @@
 						
 						<div class="clearfix"></div></a>
 				
-				<li><a href=""><div class="pull-left">
+				<li><a href="http://line.me/ti/p/top29902" target="_blank"><div class="pull-left">
 							<i class="zmdi zmdi-book mr-20"></i><span class="right-nav-text">ติดต่อเราทาง Line</span>
 						</div>
 						<div class="clearfix"></div></a></li>

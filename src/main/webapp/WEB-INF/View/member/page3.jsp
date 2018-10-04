@@ -1,30 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 	<%@page import="java.util.List"%>
-<%@page import="com.Bru.Bean.FormregiterBean"%>
+<%@page import="com.Bru.Bean.*"%>
 <!DOCTYPE html>
 
 <html >
 <head>
-    <meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-	<title>Elmer I Fast build Admin dashboard for any platform</title>
-	<meta name="description" content="Elmer is a Dashboard & Admin Site Responsive Template by hencework." />
-	<meta name="keywords" content="admin, admin dashboard, admin template, cms, crm, Elmer Admin, Elmeradmin, premium admin templates, responsive admin, sass, panel, software, ui, visualization, web app, application" />
-	<meta name="author" content="hencework"/>
-	
-	<!-- Favicon -->
-	<link rel="shortcut icon" href="favicon.ico">
-	<link rel="icon" href="favicon.ico" type="image/x-icon">
-    
-	<!-- Data table CSS -->
-	<link href="vendors/bower_components/datatables/media/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css"/>
-	
-	<!-- Custom CSS -->
-	<link href="dist/css/style.css" rel="stylesheet" type="text/css">
+<jsp:include page="../../Template/heder.jsp"></jsp:include>
+
 </head>
 
 <body>
+<% SimpleTestBean bean = null ;
+	bean = (SimpleTestBean) request.getSession().getAttribute("bean");
+	%>
 	<!--Preloader-->
 	<div class="preloader-it">
 		<div class="la-anim-1"></div>
@@ -50,7 +39,7 @@
 					<div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
 					  <ol class="breadcrumb">
 						<li><a >หน้าแรก</a></li>
-						<li><a ><span>รายการสินเชื่อ</span></a></li>
+						<li><a ><span>จ่ายค่างวด</span></a></li>
 						
 					  </ol>
 					</div>
@@ -68,6 +57,7 @@
 								</div>
 								<div class="clearfix"></div>
 							</div>
+							<input type="hidden" value="<%=bean.getEmail()%>" id="teas">
 							<div class="panel-wrapper collapse in">
 								<div class="panel-body">
 									<div class="table-wrap">
@@ -80,10 +70,10 @@
 														<th>รถ</th>
 														<th>email</th>
 														<th>เงืนที่ต้องจ่าย</th>
-														<th>รุ่นรถ</th>
+														
 														<th>งวดทั้งหมด</th>
 														<th>งวดที่เหลือ</th>
-														<th>ดูรายละเอียด</th>
+														<th>จ่ายผ่าน</th>
 													</tr>
 												</thead>
 												<tfoot>
@@ -93,26 +83,24 @@
 														<th>รถ</th>
 														<th>email</th>
 														<th>เงืนที่ต้องจ่าย</th>
-														<th>รุ่นรถ</th>
 														<th>งวดทั้งหมด</th>
 														<th>งวดที่เหลือ</th>
-														<th>ดูรายละเอียด</th>
+														<th>จ่ายผ่าน</th>
 													</tr>
 												</tfoot>
 												<tbody>
 			
 					
-													<tr>
-														<td>f</td>
-														<td>f</td>
-														<td>f</td>
-														<td>f</td>
-														<td>f</td>
-														<td>f</td>
-														<td>f</td>
-														<td>f</td>
+													<tr id ="test2">
+														<td id="t1">f</td>
+														<td id="t2">f</td>
+														<td id="t3">f</td>
+														<td id="t4">f</td>
+														<td id="t5">f</td>
+														<td id="t6">f</td>
+														<td id="t7">f</td>
 													
-														<td><button onclick="gotoUpdate('')" class="btn btn-success btn-icon-anim btn-square">เลือก</button></td>
+														<td id="t8"><button onclick="gotoUpdate('')" class="btn btn-success btn-icon-anim btn-square">เลือก</button></td>
 													</tr>
 									
 							
@@ -153,19 +141,24 @@
 	<!-- JavaScript -->
 	<script type="text/javascript">
 	$(document).ready(function() {
-		$.ajax({
-			type : "GET",
-			url : "http://localhost:8090/bank32",
-			contentType : "application/json; charset=utf-8",
-			dataType : "json",
-			success : function(msg) {
-				console.log('Success')
-				for(var i=0; i<msg.length; i++) {
-					$('#groupType').append('<option value="' + msg[i].yeYear+ '">' + msg[i].yeYear + '</option>');
-				}
-				
-			}
-		});
+		var simbean = {
+				"name" : $('#teas').val()};
+
+		 var table = $('#datable_1').DataTable({
+				"sAjaxSource": "http://localhost:8090/bank32",
+				"sAjaxDataProp": "JSON.stringify(simbean)",
+				"order": [[ 0, "asc" ]],
+				"aoColumns": [
+				    { "mData": "ลำดับ"},
+			      { "mData": "ชื่อ" },
+					  { "mData": "รถ" },
+					  { "mData": "email" },
+					  { "mData": "เงืนที่ต้องจ่าย" },
+					  { "mData": "งวดที่เหลือ" },
+					  { "mData": "จ่ายผ่าน" }
+				]
+		 })
+		
 	});
 	</script>
     <!-- jQuery -->
