@@ -135,7 +135,7 @@
 							<div class="panel-body">
 									<div id="" class="" style="height:342px;">
 									
-										<img alt=""  align="middle" src="dist/img/body/pg3.png"style="height:200px; width: 200px; margin-left: 23%;margin-top: 15%;"><br><br>
+										<img alt=""  align="middle" src="dist/img/body/pg3.png"style="height:150px; width: 300px; margin-left: 23%;margin-top: 15%;"><br><br>
 								<button onclick="location.href = 'Transfer';" class="btn btn-info btn-rounded btn-block btn-anim"><i class="icon-check"></i><span class="btn-text">เลือก</span></button>
 									
 									
@@ -165,7 +165,7 @@
 									<div id="" class="" style="height:342px;">
 									
 									
-										<img alt=""  align="middle" src="dist/img/body/pg4.png"style="height:200px; width: 200px; margin-left: 23%;margin-top: 15%;"><br><br>
+										<img alt=""  align="middle" src="dist/img/body/pg4.png"style="height:150px; width: 300px; margin-left: 23%;margin-top: 15%;"><br><br>
 								<button onclick="location.href = 'repassword';" class="btn btn-info btn-rounded btn-block btn-anim"><i class="icon-check"></i><span class="btn-text">เลือก</span></button>
 									
 									</div>	

@@ -293,7 +293,7 @@
 								</li>
 							</ul></li>
 						<li class="divider"></li>
-						<li><a href="#"><i class="zmdi zmdi-power"></i><span>ออกจากระบบ</span></a></li>
+						<li><a href="logout"><i class="zmdi zmdi-power"></i><span>ออกจากระบบ</span></a></li>
 					</ul></li>
 			</ul>
 		</div>

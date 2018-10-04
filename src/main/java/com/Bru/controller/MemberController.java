@@ -1,31 +1,57 @@
 package com.Bru.controller;
 
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+
+import com.Bru.Dao.FormRegisterDao;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
+
+
 
 import com.Bru.Bean.FormregiterBean;
+import com.Bru.Bean.GatherBean;
 import com.Bru.Bean.LoginBean;
 import com.Bru.Bean.LoginBeanSimple;
 import com.Bru.Bean.MiradoBean;
 import com.Bru.Bean.ReceiptBean;
 import com.Bru.Bean.SimpleTestBean;
 import com.Bru.Bean.YearCarBean;
+import com.Bru.Dao.FormMonnyDao;
 import com.Bru.Dao.FormReDao;
 import com.Bru.Dao.LoginDao;
 import com.Bru.Dao.ProvinceDao;
 import com.Bru.Dao.TransferDao;
+import com.Bru.config.PaypalPaymentIntent;
+import com.Bru.config.PaypalPaymentMethod;
+import com.Bru.service.PaypalService;
+import com.Bru.util.URLUtils;
+import com.paypal.api.payments.Links;
+import com.paypal.api.payments.Payment;
+import com.paypal.base.rest.PayPalRESTException;
+
 
 @Controller
 public class MemberController {
 
+	@Autowired
+	FormRegisterDao formRegisterDao;
 	@Autowired
 	FormReDao formReDao;
 	@Autowired
@@ -34,7 +60,17 @@ public class MemberController {
 	ProvinceDao provinceDao;
 	@Autowired
 	TransferDao transferDao;
-	String email1 ;
+	String email1="top@top.com" ;
+	@Autowired
+	FormMonnyDao formMonnyDao;
+	
+	public static final String PAYPAL_SUCCESS_URL = "success";
+	public static final String PAYPAL_CANCEL_URL = "cancel";
+
+	private Logger log = LoggerFactory.getLogger(getClass());
+
+	@Autowired
+	private PaypalService paypalService;
 	
 	@RequestMapping(value="/page1")
 	public String index() {
@@ -191,12 +227,26 @@ public class MemberController {
 			return "member/page2";
 		}
 		@RequestMapping(value = "/page3")
-		public String page3(HttpServletRequest request) throws SQLException {
-
-			SimpleTestBean bean = new SimpleTestBean();
+		public String page3(HttpServletRequest request) throws SQLException, ParseException {
+			List<GatherBean> list = new ArrayList<>();
 			email1 ="top@top.com";
+			String email = email1;
+			DateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+			Date today = sdf.parse("14/11/2018");
+			Calendar cal = Calendar.getInstance();
+			today = new Date();
+			cal.setTime(today);
+			int M = 0, D = 0;
+			M = cal.get(Calendar.MONTH);
+			D = cal.get(Calendar.DATE);
+			SimpleTestBean bean = new SimpleTestBean();
+		
 		
 			bean.setEmail(email1);
+			list = formMonnyDao.branddd(email, M + 1, D);
+
+			request.getSession().setAttribute("list", list);
+			
 			request.getSession().setAttribute("bean",bean );
 			return "member/page3";
 		}
@@ -243,5 +293,115 @@ public class MemberController {
 			requst.getSession().setAttribute("list", list);
 			return "member/Transfer";
 		}
-	// end class   
+		public int BosTERS;
+		//pay
+		// paypal
+		@RequestMapping(value = "/pay")
+		public String MBS(HttpServletRequest request, int regid) throws SQLException {
+			String cancelUrl = URLUtils.getBaseURl(request) + "/" + PAYPAL_CANCEL_URL;
+			String successUrl = URLUtils.getBaseURl(request) + "/" + PAYPAL_SUCCESS_URL;
+			BosTERS = regid;
+			GatherBean bean = new GatherBean();
+			bean = formMonnyDao.vss(regid);
+
+			try {
+				int a = bean.getGaPrie();
+				Payment payment = paypalService.createPayment(a + .00, "USD", PaypalPaymentMethod.paypal,
+						PaypalPaymentIntent.sale, "payment description", cancelUrl, successUrl);
+				for (Links links : payment.getLinks()) {
+					if (links.getRel().equals("approval_url")) {
+						return "redirect:" + links.getHref();
+					}
+				}
+			} catch (PayPalRESTException e) {
+				log.error(e.getMessage());
+			}
+			return "redirect:/";
+		}
+
+		@RequestMapping(method = RequestMethod.GET, value = PAYPAL_CANCEL_URL)
+		public String cancelPay(HttpServletRequest request) throws ParseException, SQLException {
+			List<GatherBean> list = new ArrayList<>();
+			String email = email1;
+			DateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+			Date today = sdf.parse("14/11/2018");
+			Calendar cal = Calendar.getInstance();
+			today = new Date();
+			cal.setTime(today);
+			int M = 0, D = 0;
+			M = cal.get(Calendar.MONTH);
+			D = cal.get(Calendar.DATE);
+			list = formMonnyDao.branddd(email, M + 1, D);
+
+			request.getSession().setAttribute("list", list);
+			return "member/page3";
+		}
+
+		// ทำต่อ
+		@RequestMapping(method = RequestMethod.GET, value = PAYPAL_SUCCESS_URL)
+		public String successPay(@RequestParam("paymentId") String paymentId, @RequestParam("PayerID") String payerId,
+				HttpServletRequest request) throws SQLException, ParseException {
+			GatherBean bean = new GatherBean();
+			ReceiptBean cev = new ReceiptBean();
+			FormregiterBean rebean = new FormregiterBean();
+			int a = 0, m = 0, n = 0, p = 0;
+			List<GatherBean> list = new ArrayList<>();
+			String email = email1;
+			DateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+			Date today = sdf.parse("14/11/2018");
+			Calendar cal = Calendar.getInstance();
+			today = new Date();
+			cal.setTime(today);
+			int M = 0, D = 0, Y = 0;
+			M = cal.get(Calendar.MONTH);
+			D = cal.get(Calendar.DATE);
+			Y = cal.get(Calendar.YEAR);
+			
+			bean = formMonnyDao.vss(BosTERS);
+			a = bean.getGaId();
+			m = M + 2;
+			n = Y;
+			p = bean.getGaFistPeriod() - 1;
+			String Mo[] = { "มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน", "กรกฎาคม", "สิงหาคม",
+					"กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม" };
+
+			rebean = formRegisterDao.vvvv(bean.getGaUser());
+			cev.setReAdmin("แอดมินเว็บไซต์");
+			cev.setReBank("กสิกร");
+			cev.setReDay(D);
+			cev.setReMont(Mo[M]);
+			cev.setReEmail(bean.getGaEmail());
+			cev.setReIdga(bean.getGaId());
+			String vp = String.valueOf(bean.getGaPrie());
+			cev.setReMonny(vp);
+			cev.setReName(rebean.getFoFNameTH()+"        " + rebean.getFoLNameTH());
+			cev.setReYrar(n);
+			cev.setReCar(rebean.getFoCarMake());
+			cev.setReCaryear(rebean.getFoGroupType());
+			cev.setReCarmodel(rebean.getFoCarMake2());
+			try {
+				Payment payment = paypalService.executePayment(paymentId, payerId);
+				formMonnyDao.sot(m, n, a, p);
+				formMonnyDao.msaw(cev);
+
+				if (payment.getState().equals("approved")) {
+
+				}
+			} catch (PayPalRESTException e) {
+				log.error(e.getMessage());
+			}
+			list = formMonnyDao.branddd(email, M + 1, D);
+			request.getSession().setAttribute("list", list);
+			return "member/page3";
+		}
+		// end paypal
+		
+		@RequestMapping(value = "/logout")
+		public String logout(Model model) {
+			
+			
+			return "index";
+		}
+	
+	// end class    
 }
