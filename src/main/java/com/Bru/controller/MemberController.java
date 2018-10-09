@@ -94,7 +94,7 @@ public class MemberController {
 			bean = loginDao.login(beansim);
 			if (bean.getLoEmail() != null) {
 				if (bean.getLoStatus().equals("1")) {
-						
+					email1 = bean.getLoEmail();
 					page = "admin/welcome";
 				} else if (bean.getLoStatus().equals("2")) {
 					email1 = bean.getLoEmail();
