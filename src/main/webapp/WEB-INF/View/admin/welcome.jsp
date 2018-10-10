@@ -48,7 +48,7 @@
 								
 									<div    style="height:330px;">
 										<img alt=""  src="dist/img/body/t1.png"style="height:150px; margin-left: 15%;margin-top: 16%;"><br><br>
-									<button onclick="location.href = 'page1';" class="btn btn-info btn-rounded btn-block btn-anim"><i class="icon-check"></i><span class="btn-text">เลือก</span></button>
+									<button onclick="location.href = 'listuser';" class="btn btn-info btn-rounded btn-block btn-anim"><i class="icon-check"></i><span class="btn-text">เลือก</span></button>
 									</div>
 								</div>
 							</div>
@@ -76,7 +76,7 @@
 								<div class="" style="height:370px;">
 								
 								<img alt=""  align="middle" src="dist/img/body/pg1.png"style="height:200px; width: 200px; margin-left: 23%;margin-top: 10%;"><br><br>
-								<button onclick="location.href = 'page2';" class="btn btn-info btn-rounded btn-block btn-anim"><i class="icon-check"></i><span class="btn-text">เลือก</span></button>
+								<button onclick="location.href = 'listproduck';" class="btn btn-info btn-rounded btn-block btn-anim"><i class="icon-check"></i><span class="btn-text">เลือก</span></button>
 								</div>
 							</div>
 						</div>
@@ -103,7 +103,7 @@
 									<div id="" class="" style="height:330px;">
 									
 										<img alt=""  align="middle" src="dist/img/body/pg2.png"style="height:200px; width: 200px; margin-left: 23%;margin-top: 6%;"><br><br>
-								<button onclick="location.href = 'page3';" class="btn btn-info btn-rounded btn-block btn-anim"><i class="icon-check"></i><span class="btn-text">เลือก</span></button>
+								<button onclick="location.href = 'transfer';" class="btn btn-info btn-rounded btn-block btn-anim"><i class="icon-check"></i><span class="btn-text">เลือก</span></button>
 									</div>
 								</div>
 							</div>
@@ -113,69 +113,7 @@
 				<!-- /Row -->
 				
 				<!-- Row -->
-				<div class="row">
-					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-						<div class="panel panel-default card-view  panel-refresh">
-						<div class="refresh-container">
-								<div class="la-anim-1"></div>
-							</div>
-							<div class="panel-heading">
-								<div class="pull-left">
-									<h6 class="panel-title txt-dark">ประวัติการจ่ายเงิน</h6>
-								</div>
-								<div class="pull-right">
-									<a href="#" class="pull-left inline-block refresh mr-15">
-										<i class="zmdi zmdi-replay">Refresh</i>
-									</a>
-									
-								</div>
-								<div class="clearfix"></div>
-							</div>
-							<div class="panel-wrapper collapse in">
-							<div class="panel-body">
-									<div id="" class="" style="height:342px;">
-									
-										<img alt=""  align="middle" src="dist/img/body/pg3.png"style="height:150px; width: 300px; margin-left: 23%;margin-top: 15%;"><br><br>
-								<button onclick="location.href = 'Transfer';" class="btn btn-info btn-rounded btn-block btn-anim"><i class="icon-check"></i><span class="btn-text">เลือก</span></button>
-									
-									
-									</div>	
-								</div>	
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-						<div class="panel panel-default card-view panel-refresh">
-							<div class="refresh-container">
-								<div class="la-anim-1"></div>
-							</div>
-							<div class="panel-heading">
-								<div class="pull-left">
-									<h6 class="panel-title txt-dark">เปลี่ยนรหัสผ่าน</h6>
-								</div>
-								<div class="pull-right">
-									<a href="#" class="pull-left inline-block refresh">
-										<i class="zmdi zmdi-replay">Refresh</i>
-									</a>
-								</div>
-								<div class="clearfix"></div>
-							</div>
-							<div class="panel-wrapper collapse in">
-								<div class="panel-body">
-									<div id="" class="" style="height:342px;">
-									
-									
-										<img alt=""  align="middle" src="dist/img/body/pg4.png"style="height:150px; width: 300px; margin-left: 23%;margin-top: 15%;"><br><br>
-								<button onclick="location.href = 'repassword';" class="btn btn-info btn-rounded btn-block btn-anim"><i class="icon-check"></i><span class="btn-text">เลือก</span></button>
-									
-									</div>	
-								</div>	
-							</div>
-						</div>
-					</div>
-					
-				
-				</div>
+			
 				<!-- /Row -->
 			</div>
 			

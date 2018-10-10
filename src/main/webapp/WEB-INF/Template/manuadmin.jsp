@@ -6,7 +6,7 @@
 		<div class="mobile-only-brand pull-left">
 			<div class="nav-header pull-left">
 				<div class="logo-wrap">
-					<a href="index2"> <img class="brand-img"
+					<a href="indexadmin"> <img class="brand-img"
 						src="dist/img/logo.png" alt="brand" /> <span class="brand-text">ระบบสินเชื่อรถยนต์</span>
 					</a>
 				</div>
@@ -306,7 +306,7 @@
 				<li class="navigation-header"><span>Main</span> <i
 					class="zmdi zmdi-more"></i></li>
 
-				<li><a href="page1" data-toggle="collapse"
+				<li><a href="listuser" data-toggle="collapse"
 					data-target="#ecom_dr"><div class="pull-left">
 							<i class="zmdi zmdi-shopping-basket mr-20"></i><span
 								class="right-nav-text">ดูรหัสของทุกคน</span>
@@ -315,7 +315,7 @@
 							<span class="label label-primary">hot</span>
 						</div>
 						<div class="clearfix"></div></a></li>
-				<li><a href="page2" data-toggle="collapse"
+				<li><a href="listproduck" data-toggle="collapse"
 					data-target="#app_dr"><div class="pull-left">
 							<i class="zmdi zmdi-apps mr-20"></i><span class="right-nav-text">ดูรายการ
 							</span>
@@ -330,7 +330,7 @@
 				<li class="navigation-header"><span>component</span> <i
 					class="zmdi zmdi-more"></i></li>
 				
-				<li><a href="Transfer" data-toggle="collapse"
+				<li><a href="transfer" data-toggle="collapse"
 					data-target="#form_dr"><div class="pull-left">
 							<i class="zmdi zmdi-edit mr-20"></i><span class="right-nav-text">ดูประวัติการโอนเงิน</span>
 						</div>
