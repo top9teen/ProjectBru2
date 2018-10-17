@@ -325,7 +325,16 @@
 						</div>
 						
 						<div class="clearfix"></div></a></li>
-
+<li><a href="page22" data-toggle="collapse"
+					data-target="#app_dr"><div class="pull-left">
+							<i class="zmdi zmdi-apps mr-20"></i><span class="right-nav-text">รายการที่ผ่านสินเชื่อ
+							</span>
+						</div>
+						<div class="pull-right">
+							
+						</div>
+						
+						<div class="clearfix"></div></a></li>
 				<li><hr class="light-grey-hr mb-10" /></li>
 				<li class="navigation-header"><span>component</span> <i
 					class="zmdi zmdi-more"></i></li>

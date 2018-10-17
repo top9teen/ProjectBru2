@@ -21,7 +21,7 @@
 				<div class="sp-logo-wrap pull-left">
 					<a >
 						<img class="brand-img mr-10" src="dist/img/logo.png" alt="brand"/>
-						<span class="brand-text">ระบบสินเชื่อรถยนต์</span>
+						<span class="brand-text" style="font-family:Mali ; ">ระบบสินเชื่อรถยนต์</span>
 					</a>
 				</div>
 				<div class="form-group mb-0 pull-right">
@@ -41,8 +41,9 @@
 								<div class="row">
 									<div class="col-sm-12 col-xs-12">
 										<div class="mb-30">
-											<h3 class="text-center txt-dark mb-10"> <img alt="" style="width: 450px; height: 200px;" src="dist/img/logo2w.png"></h3>
 											
+											<h3 class="text-center txt-dark mb-10"> <img alt="" style="width: 450px; height: 200px;" src="dist/img/logo2w.png"></h3>
+											<h4 class="text-center txt-dark mb-10" > การพัฒนาระบบสินเชื่อรถยนต์ออนไลน์ ด้วย SPRING BOOT FRAMEWORK</h4>
 										</div>	
 										<div class="form-wrap">
 											<form action="gotologin">

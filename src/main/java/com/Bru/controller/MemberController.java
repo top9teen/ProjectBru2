@@ -60,7 +60,7 @@ public class MemberController {
 	ProvinceDao provinceDao;
 	@Autowired
 	TransferDao transferDao;
-	String email1="top@top.com" ;
+	String email1;
 	@Autowired
 	FormMonnyDao formMonnyDao;
 	
@@ -220,20 +220,29 @@ public class MemberController {
 		public String test1() {
 			return "member/welcome";
 		}
-		// sel dataTable1
+		// sel dataTable1 
 		@RequestMapping(value = "/page2")
 		public String page2(HttpServletRequest request) throws SQLException {
 			List<FormregiterBean> list = new ArrayList<>();
-			email1 ="top@top.com";
+			
 			list=formReDao.selre(email1);
 			
 			request.getSession().setAttribute("list2", list);
 			return "member/page2";
 		}
+		@RequestMapping(value = "/page22")
+		public String page22(HttpServletRequest request) throws SQLException {
+			List<FormregiterBean> list = new ArrayList<>();
+			
+			list=formReDao.selre2(email1);
+			
+			request.getSession().setAttribute("list2", list);
+			return "member/page22";
+		}
 		@RequestMapping(value = "/page3")
 		public String page3(HttpServletRequest request) throws SQLException, ParseException {
 			List<GatherBean> list = new ArrayList<>();
-			email1 ="top@top.com";
+			
 			String email = email1;
 			DateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 			Date today = sdf.parse("14/11/2018");
@@ -292,7 +301,6 @@ public class MemberController {
 		@RequestMapping(value = "/Transfer")
 		public String Transfer(HttpServletRequest requst) throws SQLException {
 				List<ReceiptBean> list = new ArrayList<>();
-				email1 ="top@top.com";
 			list = transferDao.Trensasda(email1);
 			requst.getSession().setAttribute("list", list);
 			return "member/Transfer";

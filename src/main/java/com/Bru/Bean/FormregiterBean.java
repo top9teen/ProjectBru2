@@ -38,6 +38,21 @@ public class FormregiterBean {
 	private Date foDate;
 	private int foReMonny;
 	private String foUs;
+	private String foNamebank;
+	private String foRole;
+	
+	public String getFoNamebank() {
+		return foNamebank;
+	}
+	public void setFoNamebank(String foNamebank) {
+		this.foNamebank = foNamebank;
+	}
+	public String getFoRole() {
+		return foRole;
+	}
+	public void setFoRole(String foRole) {
+		this.foRole = foRole;
+	}
 	public int getFoId() {
 		return foId;
 	}
