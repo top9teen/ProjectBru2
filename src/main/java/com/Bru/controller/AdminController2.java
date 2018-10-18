@@ -19,15 +19,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.Bru.Bean.FormregiterBean;
 import com.Bru.Bean.GatherBean;
 import com.Bru.Bean.LoginBean;
+import com.Bru.Bean.LoginBeanSimple;
 import com.Bru.Bean.ReceiptBean;
-
 import com.Bru.Dao.LoginDao;
 import com.Bru.Dao.SelTableDao;
 import com.Bru.Dao.TransferDao;
 
 @Controller
-public class AdminController {
-	
+public class AdminController2 {
 	@Autowired
 	LoginDao loginDao ;
 	@Autowired
@@ -35,51 +34,51 @@ public class AdminController {
 	@Autowired
 	TransferDao  transferDao;
 	
-	@RequestMapping(value = "/listuser")
+	@RequestMapping(value = "/listuser35")
 	public String listuser(Model model ,HttpServletRequest request ) throws SQLException {
 	List<LoginBean> list  = new ArrayList<>();
    list = loginDao.login22();
  request.getSession().setAttribute("list", list);
-		return "admin/customerlist";
+		return "admin2/customerlist";
 	}
-	@RequestMapping(value = "/listproduck")
+	@RequestMapping(value = "/listproduck35")
 	public String listproduck(HttpServletRequest requst) throws SQLException {
 		List<FormregiterBean> list = new ArrayList<>();
 		list = selTableDao.selrell();
 		
 		requst.getSession().setAttribute("listUser", list);
 
-		return "admin/listproduck";
+		return "admin2/listproduck";
 	}
 	
-	@RequestMapping(value = "/transfer")
+	@RequestMapping(value = "/transfer35")
 	public String transfer(HttpServletRequest requst) throws SQLException {
 		List<ReceiptBean> list  = new ArrayList<>();
 		
 		list = transferDao.Trens();
 		requst.getSession().setAttribute("list", list);
 			
-		return "admin/Transferhistory";
+		return "admin2/Transferhistory";
 	}
-	@RequestMapping(value = "/productadmin")
+	@RequestMapping(value = "/productadmin35")
 	public String page2(HttpServletRequest request) throws SQLException {
 		List<FormregiterBean> list = new ArrayList<>();
 		
 		list=selTableDao.selre();
 		
 		request.getSession().setAttribute("list2", list);
-		return "admin/productadmin";
+		return "admin2/productadmin";
 	}
-	@RequestMapping(value = "/productadmin2")
+	@RequestMapping(value = "/productadmin235")
 	public String page22(HttpServletRequest request) throws SQLException {
 		List<FormregiterBean> list = new ArrayList<>();
 		
 		list=selTableDao.selre2();
 		
 		request.getSession().setAttribute("list2", list);
-		return "admin/productadmin2";
+		return "admin2/productadmin2";
 	}
-	@RequestMapping(value = "/productadmin3")
+	@RequestMapping(value = "/productadmin335")
 	public String page3(HttpServletRequest request) throws SQLException, ParseException {
 		List<GatherBean> list = new ArrayList<>();
 
@@ -98,7 +97,40 @@ public class AdminController {
 		request.getSession().setAttribute("list", list);
 		
 		
-		return "admin/productadmin3";
+		return "admin2/productadmin3";
 	}
-	// end class
+	@RequestMapping(value = "/addadmin35")
+	public String addadmin(Model model) throws SQLException {
+		model.addAttribute("re", "");
+		return "admin2/page4";
+	}
+	@RequestMapping(value = "/addAdmin235")
+	public String refass(Model model,String repassed,String newpass ) throws SQLException{
+		LoginBean bean = new LoginBean();
+		LoginBeanSimple beansim = new LoginBeanSimple();
+		beansim.setEmail(repassed);
+		beansim.setPassword(newpass);
+		try {
+			bean = loginDao.login(beansim);
+	
+			if (bean.getLoEmail() == null) {
+				 loginDao.registeradmin(beansim);
+			
+				model.addAttribute("re", "L");
+			}else if(bean.getLoPassword() != null) {
+				model.addAttribute("re", "G");
+			}
+			else {
+				model.addAttribute("re", "F");
+			}
+				
+			
+		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return "admin2/page4";
+	}
+	// end class   
 }

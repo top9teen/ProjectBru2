@@ -90,6 +90,31 @@
 			document.register.repassword.focus();
 			return false;
 		}
+		if (document.register.email.value.indexOf('@') == -1) {
+			alert('ใส่ @');
+			document.register.email.focus();
+			return false;
+		}
+		if (document.register.email.value.indexOf('.') == -1) {
+			alert('ใส่ .');
+			document.register.email.focus();
+			return false;
+		}
+		if (document.register.email.value == "") {
+			alert('กรุณา ใส่ email');
+			document.register.email.focus();
+			return false;
+		}
+		if (document.register.password.value == "") {
+			alert('กรุณา ใส่  password');
+			document.register.password.focus();
+			return false;
+		}
+		if (document.register.repassword.value == "") {
+			alert('กรุณา ใส่  ยืนยัน password');
+			document.register.repassword.focus();
+			return false;
+		}
 	}
 </script>
 	

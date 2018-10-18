@@ -97,12 +97,17 @@ public class MemberController {
 		try {
 			bean = loginDao.login(beansim);
 			if (bean.getLoEmail() != null) {
-				if (bean.getLoStatus().equals("1")) {
+				if (bean.getLoStatus().equals("3")) {
 					email1 = bean.getLoEmail();
 					page = "admin/welcome";
 				} else if (bean.getLoStatus().equals("2")) {
 					email1 = bean.getLoEmail();
 					page = "member/welcome";
+				
+				}
+				else if (bean.getLoStatus().equals("1")) {
+					email1 = bean.getLoEmail();
+					page = "admin2/welcome";
 				
 				}
 
@@ -145,14 +150,14 @@ public class MemberController {
 					bean = loginDao.loginfas(beansim);
 					if (bean.getLoStatus().equals("1")) {
 					
-						page = "admin/welcome";
+						page = "admin2/welcome";
 					} else if (bean.getLoStatus().equals("2")) {
 						
 						page = "member/welcome";
 						
 					}else if (bean.getLoStatus().equals("3")) {
 						
-						page = "index";
+						page = "admin/welcome";
 						
 					}
 					

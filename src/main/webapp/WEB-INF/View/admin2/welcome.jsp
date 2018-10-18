@@ -17,7 +17,7 @@
 	</div>
 	<!-- /Preloader -->
 	<div class="wrapper  theme-5-active pimary-color-blue slide-nav-toggle">
-		<jsp:include page="../../Template/manuadmin.jsp"></jsp:include>
+			<jsp:include page="../../Template/manuadmin2.jsp"></jsp:include>
 		<!-- /Right Sidebar Menu -->
 
 		<!-- Main Content -->

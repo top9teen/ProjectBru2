@@ -27,10 +27,9 @@ public class LoginDao {
 		Connection conn = con.openConnect();
 		
 		try {
-			sql.append(" SELECT * FROM  usertable WHERE lo_email = ? AND lo_password = ? ");
+			sql.append(" SELECT * FROM  usertable WHERE lo_email = ? ");
 			prepared = conn.prepareStatement(sql.toString());
 			prepared.setString(1,beansim.getEmail());
-			prepared.setString(2,beansim.getPassword());
 
 			ResultSet rs = prepared.executeQuery();
 			while (rs.next()) {
@@ -198,6 +197,30 @@ public List<LoginBean> login22 () throws SQLException{
 	return list ;
 }
 
+public void registeradmin (LoginBeanSimple beansim) throws SQLException{
+	
+	ConnectDB con = new ConnectDB();
+	PreparedStatement prepared = null;
+	StringBuilder sql = new StringBuilder();
+	Connection conn = con.openConnect();
+	
+	try {
+		sql.append(" INSERT INTO UserTable (lo_email,lo_password,lo_status)VALUES(?,?,'3') ");
+		prepared = conn.prepareStatement(sql.toString());
+		prepared.setString(1,beansim.getEmail());
+		prepared.setString(2,beansim.getPassword());
+		prepared.executeUpdate();
+		
 
+}
+	catch (Exception e) {
+		e.printStackTrace();
+	}
+	finally {
+		conn.close();
+	}
+	
+	
+}
 	// end class
 }

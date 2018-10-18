@@ -306,7 +306,7 @@
 				<li class="navigation-header"><span>Main</span> <i
 					class="zmdi zmdi-more"></i></li>
 
-				<li><a href="listuser" data-toggle="collapse"
+				<li><a href="listuser35" data-toggle="collapse"
 					data-target="#ecom_dr"><div class="pull-left">
 							<i class="glyphicon glyphicon-lock mr-20"></i><span
 								class="right-nav-text">ดูรหัสของทุกคน</span>
@@ -315,7 +315,7 @@
 							<span class="label label-primary">hot</span>
 						</div>
 						<div class="clearfix"></div></a></li>
-							<li><a href="listproduck" data-toggle="collapse"
+							<li><a href="listproduck35" data-toggle="collapse"
 					data-target="#ecom_dr"><div class="pull-left">
 							<i class=" glyphicon glyphicon-th-list mr-20"></i><span
 								class="right-nav-text">ดูรายการทั้งหมด</span>
@@ -324,7 +324,7 @@
 							
 						</div>
 						<div class="clearfix"></div></a></li>
-						<li><a href="productadmin" data-toggle="collapse"
+						<li><a href="productadmin35" data-toggle="collapse"
 					data-target="#ecom_dr"><div class="pull-left">
 							<i class=" glyphicon glyphicon-list-alt mr-20"></i><span
 								class="right-nav-text">ดูรายการที่รอการอนุมัติ</span>
@@ -333,7 +333,7 @@
 							
 						</div>
 						<div class="clearfix"></div></a></li>
-				<li><a href="productadmin2" data-toggle="collapse"
+				<li><a href="productadmin235" data-toggle="collapse"
 					data-target="#app_dr"><div class="pull-left">
 							<i class="glyphicon glyphicon-duplicate mr-20"></i><span class="right-nav-text">ดูรายการที่ผ่านอนุมัติ
 							</span>
@@ -348,7 +348,7 @@
 				<li class="navigation-header"><span>component</span> <i
 					class="zmdi zmdi-more"></i></li>
 				
-				<li><a href="productadmin3
+				<li><a href="productadmin335
 				
 				" data-toggle="collapse"
 					data-target="#form_dr"><div class="pull-left">
@@ -361,7 +361,7 @@
 				</li>
 			
 				
-				<li><a href="transfer" data-toggle="collapse"
+				<li><a href="transfer35" data-toggle="collapse"
 					data-target="#form_dr"><div class="pull-left">
 							<i class="zmdi zmdi-edit mr-20"></i><span class="right-nav-text">ดูประวัติการโอนเงิน</span>
 						</div>
@@ -371,7 +371,15 @@
 						<div class="clearfix"></div></a>
 				</li>
 			
-				
+					<li><a href="addadmin35" data-toggle="collapse"
+					data-target="#form_dr"><div class="pull-left">
+							<i class="zmdi zmdi-edit mr-20"></i><span class="right-nav-text">เพิ่มAdmin</span>
+						</div>
+						<div class="pull-right">
+						
+						</div>
+						<div class="clearfix"></div></a>
+				</li>
 			
 	
 			
