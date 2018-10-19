@@ -345,7 +345,8 @@ public class MemberController {
 			Calendar cal = Calendar.getInstance();
 			today = new Date();
 			cal.setTime(today);
-			int M = 0, D = 0;
+			int M = 0, D = 0 ;
+			
 			M = cal.get(Calendar.MONTH);
 			D = cal.get(Calendar.DATE);
 			list = formMonnyDao.branddd(email, M + 1, D);

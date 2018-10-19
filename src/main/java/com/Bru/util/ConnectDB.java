@@ -3,6 +3,11 @@ package com.Bru.util;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
+
+
 public class ConnectDB {
 
 	
@@ -34,6 +39,21 @@ public class ConnectDB {
 	}
 }*/
 
-	
+	//  แบ่งสัปดา
+/*	public static void main(String[] args) {
+		 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+	        String date = "20/10/2018";
+
+
+        LocalDate today = LocalDate.parse(date, formatter);
+     
+		
+        System.out.println("Current date: " + today);
+        System.out.println(formatter.format(today));
+        //add 2 week to the current date
+        LocalDate next2Week = today.plus(1, ChronoUnit.WEEKS);
+        System.out.println("Next week: " + next2Week);
+    }*/
 	// End Class
 }
