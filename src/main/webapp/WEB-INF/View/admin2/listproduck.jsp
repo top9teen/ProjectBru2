@@ -65,6 +65,7 @@
 									<div class="table-wrap">
 										<div class="table-responsive">
 											<table id="example" class="table table-hover display  pb-30 dataTable" >
+											
 												<thead>
 													<tr>
 														<th>ลำดับ</th>

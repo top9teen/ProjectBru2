@@ -6,8 +6,8 @@
 $(window).load(function(){
 	window.setTimeout(function(){
 		$.toast({
-			heading: 'ยินดีตอนรับ',
-			text: 'ระบบวิเคราะห์สินเชื่อรถยนต์ออนไลน์',
+			heading: 'ยินดีต้อนรับ',
+			text: 'การพัฒนาระบบสินเชื่อรถยนต์ออนไลน์ ด้วย SPRING BOOT FRAMEWORK',
 			position: 'bottom-left',
 			loaderBg:'#f8b32d',
 			icon: 'success',
