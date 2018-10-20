@@ -9,7 +9,7 @@
  }
 </style>
 <link rel="icon" type="image/png" href="access/img/logo/logo8.jpg" />
-<link rel="stylesheet" href="access/css/pdf.css">
+
 <div  class="page" style="width: 80%;">
 
 	

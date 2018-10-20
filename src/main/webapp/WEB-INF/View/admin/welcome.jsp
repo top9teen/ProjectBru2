@@ -47,7 +47,7 @@
 								<div class="panel-body">
 								
 									<div    style="height:330px;">
-										<img alt=""  src="dist/img/body/t1.png"style="height:150px; margin-left: 15%;margin-top: 16%;"><br><br>
+										<img alt=""  src="dist/img/body/t1.png"style="height:60%; width: 60%; margin-left: 15%;margin-top: 16%;"><br><br>
 									<button onclick="location.href = 'listuser';" class="btn btn-info btn-rounded btn-block btn-anim"><i class="icon-check"></i><span class="btn-text">เลือก</span></button>
 									</div>
 								</div>
@@ -75,7 +75,7 @@
 							<div class="panel-wrapper collapse in">
 								<div class="" style="height:370px;">
 								
-								<img alt=""  align="middle" src="dist/img/body/pg1.png"style="height:200px; width: 200px; margin-left: 23%;margin-top: 10%;"><br><br>
+								<img alt=""  align="middle" src="dist/img/body/pg1.png"style="height:60%; width: 60%; margin-left: 23%;margin-top: 10%;"><br><br>
 								<button onclick="location.href = 'listproduck';" class="btn btn-info btn-rounded btn-block btn-anim"><i class="icon-check"></i><span class="btn-text">เลือก</span></button>
 								</div>
 							</div>
@@ -102,7 +102,7 @@
 								<div class="panel-body">
 									<div id="" class="" style="height:330px;">
 									
-										<img alt=""  align="middle" src="dist/img/body/pg2.png"style="height:200px; width: 200px; margin-left: 23%;margin-top: 6%;"><br><br>
+										<img alt=""  align="middle" src="dist/img/body/pg2.png"style="height:60%; width: 60%; margin-left: 23%;margin-top: 6%;"><br><br>
 								<button onclick="location.href = 'transfer';" class="btn btn-info btn-rounded btn-block btn-anim"><i class="icon-check"></i><span class="btn-text">เลือก</span></button>
 									</div>
 								</div>

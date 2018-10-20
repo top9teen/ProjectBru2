@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 		<div class=" form-wrap">
+		<div id="printableArea5" class="page"  style="width: 80%;">
 															<h6 class="txt-dark capitalize-font"><i class="zmdi zmdi-account mr-10"></i>ผู้กู้</h6>
 															<hr class="light-grey-hr">
 															
@@ -337,8 +338,19 @@
 																</div>
 																<!--/span-->
 															</div>
+															
+															</div>
 															<div align="center">
+					
 															 <input type="button" class="btn btn-warning" onclick="document.getElementById('Forms2').style.display='none'" value="ยกเลิก">
 															</div>
-															
 														</div>
+														<script type="text/javascript">
+														function printDiv3(divName) {
+														     var printContents = document.getElementById(divName).innerHTML;
+														     var originalContents = document.body.innerHTML;
+														     document.body.innerHTML = printContents;
+														     window.print();
+														     document.body.innerHTML = originalContents;
+														}
+</script>

@@ -40,12 +40,15 @@
 							<div class="auth-form  ml-auto mr-auto no-float">
 								<div class="row">
 									<div class="col-sm-12 col-xs-12">
+									<div class="row">
 										<div class="mb-30">
 											
-											<h3 class="text-center txt-dark mb-10"> <img alt="" style="width: 450px; height: 200px;" src="dist/img/logo2w.png"></h3>
+											<h3 class="text-center txt-dark mb-10"> <img alt="" style="width: 100%; height: 100%;" src="dist/img/logo2w.png"></h3>
 											<h4 class="text-center txt-dark mb-10" > การพัฒนาระบบสินเชื่อรถยนต์ออนไลน์ ด้วย SPRING BOOT FRAMEWORK</h4>
 										</div>	
-										<div class="form-wrap">
+										</div>
+										<div class="row">
+										 <div class="form-wrap"> 
 											<form action="gotologin">
 												<div class="form-group">
 													<label class="control-label " for="exampleInputEmail_2">Email address</label>
@@ -63,6 +66,8 @@
 													<button type="submit" class="btn btn-primary  btn-rounded">เข้าสู่ระบบ</button>
 												</div>
 											</form>
+											</div>
+											<div class="row">
 												<form action="" name="welcome">
 
 
@@ -79,7 +84,8 @@
 						</div>
 
 					</form>
-										</div>
+					</div>
+									</div>  
 									</div>	
 								</div>
 							</div>
