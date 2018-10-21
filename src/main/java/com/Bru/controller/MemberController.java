@@ -202,7 +202,7 @@ public class MemberController {
 		}
 
 		@RequestMapping(value = "/gotoreg")
-		public String gotobank(HttpServletRequest request, Model model, String typebank,String car2 ,String car,String grop,String lessmon,String lessyre,int remon) {
+		public String gotobank(HttpServletRequest request, Model model, String typebank,String car2 ,String car,String grop,String lessmon,String lessyre,int remon,String kabant2) {
 			
 			FormregiterBean bean = new FormregiterBean();
 			bean.setFoCarMake(car);
@@ -213,7 +213,7 @@ public class MemberController {
 			bean.setFoEmail(email1);
 			bean.setFoTypebank(typebank);
 			bean.setFoReMonny(remon);
-		
+			bean.setXxx(kabant2);
 
 			request.getSession().setAttribute("bean", bean);
 

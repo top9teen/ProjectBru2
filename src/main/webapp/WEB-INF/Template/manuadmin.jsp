@@ -303,7 +303,7 @@
 		<!-- Left Sidebar Menu -->
 		<div class="fixed-sidebar-left">
 			<ul class="nav navbar-nav side-nav nicescroll-bar">
-				<li class="navigation-header"><span>Main</span> <i
+				<li class="navigation-header"><span>หลัก</span> <i
 					class="zmdi zmdi-more"></i></li>
 
 				<li><a href="listuser" data-toggle="collapse"
@@ -345,14 +345,14 @@
 						<div class="clearfix"></div></a></li>
 
 				<li><hr class="light-grey-hr mb-10" /></li>
-				<li class="navigation-header"><span>component</span> <i
+				<li class="navigation-header"><span>รอง</span> <i
 					class="zmdi zmdi-more"></i></li>
 				
 				<li><a href="productadmin3
 				
 				" data-toggle="collapse"
 					data-target="#form_dr"><div class="pull-left">
-							<i class="zmdi zmdi-edit mr-20"></i><span class="right-nav-text">ผู้ที่ต้องโอน</span>
+							<i class="zmdi zmdi-edit mr-20"></i><span class="right-nav-text">ผู้ที่ค้างชำระ</span>
 						</div>
 						<div class="pull-right">
 						

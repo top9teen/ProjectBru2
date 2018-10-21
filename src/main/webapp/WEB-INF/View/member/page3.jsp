@@ -40,7 +40,7 @@
 				<!-- Title -->
 				<div class="row heading-bg">
 					<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-						<h5 class="txt-dark">รายการสินเชื่อ</h5>
+						<h5 class="txt-dark"style="font-size: 20pt;">จ่ายค่างวด</h5>
 					</div>
 					<!-- Breadcrumb -->
 					<div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
@@ -60,7 +60,7 @@
 						<div class="panel panel-default card-view">
 							<div class="panel-heading">
 								<div class="pull-left">
-									<h6 class="panel-title txt-dark">รายการสินเชื่อ</h6>
+									<h6 class="panel-title txt-dark"></h6>
 								</div>
 								<div class="clearfix"></div>
 							</div>
@@ -83,9 +83,9 @@
 														<th>รถ</th>
 														<th>email</th>
 														<th>เงืนที่ต้องจ่าย</th>
-														<th>งวดทั้งหมด</th>
 														<th>งวดที่เหลือ</th>
-														<th>จ่ายผ่าน</th>
+														<th>งวดทั้งหมด</th>
+														<th>จ่ายผ่าน PayPal</th>
 													</tr>
 												</thead>
 												<tfoot>
@@ -95,9 +95,9 @@
 														<th>รถ</th>
 														<th>email</th>
 														<th>เงืนที่ต้องจ่าย</th>
-														<th>งวดทั้งหมด</th>
 														<th>งวดที่เหลือ</th>
-														<th>จ่ายผ่าน</th>
+														<th>งวดทั้งหมด</th>
+														<th>จ่ายผ่าน PayPal</th>
 													</tr>
 												</tfoot>
 												<tbody>
@@ -112,8 +112,8 @@
 														<td><%=list.get(i).getGaPrie()%> บาท</td>
 														<td><%=list.get(i).getGaFistPeriod()%></td>
 														<td><%=list.get(i).getGaLastPeriod()%></td>
-														<td align="center"><a class="btn btn-primary btn-sm"
-															onclick="gotohos122('<%=list.get(i).getGaId()%>')">ส่งค่างวด</a></td>
+														<td ><a class="btn btn-primary btn-sm" 
+															onclick="gotohos122('<%=list.get(i).getGaId()%>')">จ่ายเงิน</a></td>
 													</tr>
 													<%
 														}

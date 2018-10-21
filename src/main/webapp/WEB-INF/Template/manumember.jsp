@@ -265,7 +265,7 @@
 					</ul></li>
 				<li class="dropdown auth-drp"><a href="#"
 					class="dropdown-toggle pr-0" data-toggle="dropdown"><img
-						src="dist/img/user1.png" alt="user_auth"
+						src="dist/img/logo/pguser.png" alt="user_auth"
 						class="user-auth-img img-circle" /><span
 						class="user-online-status"></span></a>
 					<ul class="dropdown-menu user-auth-dropdown"

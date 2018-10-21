@@ -37,7 +37,7 @@
 					<div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
 						<ol class="breadcrumb">
 							<li><a>หน้าแรก</a></li>
-							<li><a><span>เปลี่ยนรหัสผ่าน</span></a></li>
+							<li><a><span>เพิ่มAdmin</span></a></li>
 
 						</ol>
 					</div>
@@ -63,7 +63,7 @@
 								
 									<form action="addAdmin235" name="refass23"
 										OnSubmit="return vvvvvff();">
-										<h2 align="center">เปลี่ยนรหัสผ่าน</h2>
+										<h2 align="center">เพิ่มAdmin</h2>
 										<%if(result.equals("L")){ %>
 											<div class="alert alert-success alert-dismissable">
 											<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>

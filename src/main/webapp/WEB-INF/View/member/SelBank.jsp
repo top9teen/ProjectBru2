@@ -4,6 +4,16 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style type="text/css">
+label {
+	color: red;
+	
+	
+}
+p {
+	font-size: 20 pt;
+}
+</style>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <jsp:include page="../../Template/heder.jsp"></jsp:include>
 <title>Insert title here</title>
@@ -42,7 +52,7 @@
 								<div class="clearfix"></div>
 							</div>
 							<div class="panel-wrapper collapse in">
-						
+					
 								<div class="panel-body">
 									<%
 
@@ -58,7 +68,7 @@
 		%>
 									
 										
-									<form action="gotoreg">
+									<form action="gotoreg" style="font-size: 20pt;">
 				<input type="hidden" value="<%=mibean.getGroupType()%>"
 					id="groupType2" name="groupType2"> <input type="hidden"
 					value="<%=mibean.getCarMake2()%>" id="carMakeed" name="carMakeed">
@@ -82,17 +92,17 @@
 		</div>
 
 		<br>
-		<div class="w3-modal-content w3-card w3-animate-bottom" id="f2">
+		<div class="w3-modal-content w3-card w3-animate-bottom" id="f2" style="font-size: 20pt;">
 			
 
 		</div>
 		<br>
-		<div class="w3-modal-content w3-card w3-animate-bottom" id="f3">
+		<div class="w3-modal-content w3-card w3-animate-bottom" id="f3" style="font-size: 20pt;">
 		
 
 		</div>
 		<br>
-		<div class="w3-modal-content w3-card w3-animate-bottom" id="f4">
+		<div class="w3-modal-content w3-card w3-animate-bottom" id="f4" style="font-size: 20pt;">
 			
 
 		</div>
@@ -136,9 +146,10 @@
 					dataType : "json",
 					success : function(msg) {
 						console.log('Success')
-					$('#f1').append('<h3 align="center">ธนาคาร กสิกร</h3><div class="row"><div class="col-sm-4"><img alt="" src="dist/img/logo/kr2.jpg"style="height: 150px; width: 300px; "><br> <br> <br></div><div class="col-sm-4"><p>อัตราดอกเบี้ยเริ่มต้นอายุสัญญา</p><h2 style="color: green;" id="g1"></h2><label id="kabant"> </label></div><div class="col-sm-4"><input type="hidden" name="typebank" value="ka1"><br><button style="height: 150px; width: 300px;" type="submit" class="btn-lg btn btn-success">เลือก</button></div></div>');
+					$('#f1').append('<h3 align="center">ธนาคาร กสิกร</h3><div class="row"><div class="col-sm-4"><img alt="" src="dist/img/logo/kr2.jpg"style="height: 150px; width: 300px; "><br> <br> <br></div><div class="col-sm-4"><p>อัตราดอกเบี้ยเริ่มต้นอายุสัญญา</p><h2 style="color: green;" id="g1"></h2> <label id="kabant"></label><input id="kabant2"type="hidden" name="kabant2"></div><div class="col-sm-4"><input type="hidden" name="typebank" value="ka1"><br><button style="height: 150px; width: 300px;" type="submit" class="btn-lg btn btn-success">เลือก</button></div></div>');
 						
-						$('#kabant').text('วงเงินสูงสุด'+ msg.kaPrice +'บาท');
+						$('#kabant').text('วงเงินสูงสุด '+  msg.kaPrice +' บาท');
+						$('#kabant2').val(msg.kaPrice);
 						$('#g1').text('<%=yebean.getYrPercent() %>'  +  ' %');
 						$('#b1').append('<button type="submit" class="btn  btn-primary btn-rounded">เลือก</button>');
 						
@@ -172,7 +183,7 @@
 					dataType : "json",
 					success : function(msg) {
 						console.log('Success')
-						$('#f3').append('<form action="gotoreg"><h3 align="center">ธนาคาร ไทยพาณิชย์</h3><div class="row"><div class="col-sm-4"><img alt="" src="dist/img/logo/kr3.jpg"style="height: 150px; width: 300px;"><br> <br> <br></div><div class="col-sm-4"><p>อัตราดอกเบี้ยเริ่มต้นอายุสัญญา</p><h2 style="color: green;" id="g3"></h2><label id="scabant"> </label></div><div class="col-sm-4" id="b3"><input type="hidden" name="typebank" value="sc1"></div></div></form>');
+						$('#f3').append('<form action="gotoreg"><h3 align="center">ธนาคาร ไทยพาณิชย์</h3><div class="row"><div class="col-sm-4"><img alt="" src="dist/img/logo/kr3.jpg"style="height: 150px; width: 300px;"><br> <br> <br></div><div class="col-sm-4"><p>อัตราดอกเบี้ยเริ่มต้นอายุสัญญา</p><h2 style="color: green;" id="g3"></h2><input id="scabant" ></div><div class="col-sm-4" id="b3"><input type="hidden" name="typebank" value="sc1"></div></div></form>');
 						
 						$('#scabant').text('วงเงินสูงสุด'+ msg.scPrice +'บาท');
 						$('#g3').text('<%=yebean.getYrPercent() %>'   + ' %');
@@ -194,6 +205,8 @@
 						$('#g4').text('<%=yebean.getYrPercent() %>'   + ' %');
 						$('#b4').append('<button type="submit" style="height: 150px; width: 300px;" type="submit" class="btn-lg btn btn-success">เลือก</button>');
 					}
+					
+					
 				});
 				
 			});

@@ -25,7 +25,7 @@
 					</a>
 				</div>
 				<div class="form-group mb-0 pull-right">
-					<span class="inline-block pr-10">Don't have an account?</span>
+					<span class="inline-block pr-10">ยังไม่มีรหัสใช่ไหม ?</span>
 					<a class="inline-block btn btn-primary  btn-rounded btn-outline" href="signup">สมัคร</a>
 				</div>
 				<div class="clearfix"></div>

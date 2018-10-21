@@ -27,10 +27,10 @@ public class LoginDao {
 		Connection conn = con.openConnect();
 		
 		try {
-			sql.append(" SELECT * FROM  usertable WHERE lo_email = ? ");
+			sql.append(" SELECT * FROM  usertable WHERE lo_email = ? AND lo_password = ? ");
 			prepared = conn.prepareStatement(sql.toString());
 			prepared.setString(1,beansim.getEmail());
-
+			prepared.setString(2,beansim.getPassword());
 			ResultSet rs = prepared.executeQuery();
 			while (rs.next()) {
 			bean.setLoEmail(rs.getString("lo_email"));

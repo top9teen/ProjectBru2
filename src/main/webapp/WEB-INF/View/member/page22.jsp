@@ -36,13 +36,13 @@
 				<!-- Title -->
 				<div class="row heading-bg">
 					<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-					  <h5 class="txt-dark">รายการสินเชื่อ</h5>
+					  <h5 class="txt-dark" style="font-size: 20pt;">รายการที่ผ่านสินเชื่อ</h5>
 					</div>
 					<!-- Breadcrumb -->
 					<div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
 					  <ol class="breadcrumb">
 						<li><a >หน้าแรก</a></li>
-						<li><a ><span>รายการสินเชื่อ</span></a></li>
+						<li><a ><span>รายการที่ผ่านสินเชื่อ</span></a></li>
 						
 					  </ol>
 					</div>
@@ -56,7 +56,7 @@
 						<div class="panel panel-default card-view">
 							<div class="panel-heading">
 								<div class="pull-left">
-									<h6 class="panel-title txt-dark">รายการสินเชื่อ</h6>
+									<h6 class="panel-title txt-dark"></h6>
 								</div>
 								<div class="clearfix"></div>
 							</div>

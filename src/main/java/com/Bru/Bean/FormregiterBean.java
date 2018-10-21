@@ -40,7 +40,14 @@ public class FormregiterBean {
 	private String foUs;
 	private String foNamebank;
 	private String foRole;
+	private String xxx;
 	
+	public String getXxx() {
+		return xxx;
+	}
+	public void setXxx(String xxx) {
+		this.xxx = xxx;
+	}
 	public String getFoNamebank() {
 		return foNamebank;
 	}

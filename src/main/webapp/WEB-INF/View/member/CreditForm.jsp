@@ -7,6 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <jsp:include page="../../Template/heder.jsp"></jsp:include>
 <title>Insert title here</title>
+
 </head>
 <body>
 <%
@@ -37,7 +38,7 @@ FormregiterBean bean = null;
 							</div>
 							<div class="panel-heading">
 								<div class="pull-left">
-									<h6 class="panel-title txt-dark" >ระบบวิเคราะห์สินเชื่อ </h6>
+									<h6 class="panel-title txt-dark" > </h6>
 								
 								</div>
 								
@@ -58,7 +59,7 @@ FormregiterBean bean = null;
 			<div
 				class="col-md-2 col-md-offset-1 col-sm-3 col-xs-12 col-sm-offset-1">
 				<div class="form-group">
-					<label>ปีรถ</label><span class="require-red">*</span> <input
+					<label>ปีรถ</label><span class="require-red" style="color: red;">*</span> <input
 						type="text" class="form-control" id="foGroupType" value="<%=bean.getFoGroupType()%>"
 						disabled="disabled">
 						<input
@@ -69,7 +70,7 @@ FormregiterBean bean = null;
 			<div
 				class="col-md-3 col-md-offset-1 col-sm-3 col-xs-12 col-sm-offset-1">
 				<div class="form-group">
-					<label>ยี่ห่อ</label><span class="require-red">*</span> <input
+					<label>ยี่ห่อ</label><span class="require-red" style="color: red;">*</span> <input
 						type="text" class="form-control" id="foCarMake" value="<%=bean.getFoCarMake()%>"
 						disabled="disabled">
 						<input type="hidden" id="foTypebank" value="<%=bean.getFoTypebank()%>">
@@ -78,7 +79,7 @@ FormregiterBean bean = null;
 			<div
 				class="col-md-3 col-md-offset-1 col-sm-3 col-xs-12 col-sm-offset-1">
 				<div class="form-group">
-					<label>รุ่น</label><span class="require-red">*</span> <input
+					<label>รุ่น</label><span class="require-red" style="color: red;">*</span> <input
 						type="text" class="form-control" id="foCarMake2" value="<%=bean.getFoCarMake2()%>"
 						disabled="disabled">
 				</div>
@@ -89,14 +90,14 @@ FormregiterBean bean = null;
 			<div
 				class="col-md-5 col-md-offset-1 col-sm-5 col-xs-12 col-sm-offset-1">
 				<div class="form-group">
-					<label>วงเงินที่ต้องการกู้</label><span class="require-red">*</span>
+					<label>วงเงินที่ต้องการกู้</label><span class="require-red" style="color: red;">*</span><label style="color: red;">ให้สูงสุด <%=bean.getXxx() %> บาท</label>
 					<input type="text" name="lessmoney" class="form-control"
 						value="<%=bean.getFoLessmoney()%>" id="foLessmoney">
 				</div>
 			</div>
 			<div class="col-md-5 col-sm-5 col-xs-12">
 				<div class="form-group">
-					<label>ระยะเวลากู้/ปี</label><span class="require-red">*</span> <input
+					<label>ระยะเวลากู้/ปี</label><span class="require-red" style="color: red;">*</span> <input
 						type="text" class="form-control" value="<%=bean.getFoLessyear()%>"
 						disabled="disabled" id="foLessyear">
 				</div>
@@ -107,7 +108,7 @@ FormregiterBean bean = null;
 			<div
 				class="col-md-11 col-md-offset-1 col-sm-11 col-xs-12 col-sm-offset-1">
 				<div style="margin: 15px 0px 0px 0px;">
-					<label>วัตถุประสงค์การขอสินเชื่อ<span class="require-red">*</span>
+					<label>วัตถุประสงค์การขอสินเชื่อ<span class="require-red" style="color: red;">*</span>
 						(เลือกได้มากกว่า 1 ข้อ)
 					</label>
 				</div>
@@ -145,7 +146,7 @@ FormregiterBean bean = null;
 			</div>
 			<div class="col-md-6 col-sm-6 col-xs-12 ">
 				<div class="form-group other-field" style="margin-bottom: 15px;">
-					<label>โปรดระบุ</label><span class="require-red">*</span> <input
+					<label>โปรดระบุ</label><span class="require-red" style="color: red;">*</span> <input
 						type="text" class="form-control-static textAlign-left"
 						disabled="disabled" name="checkbox4-pk" value="" id="Incheckbox4pk">
 				</div>
@@ -154,10 +155,10 @@ FormregiterBean bean = null;
 		<!-- stap4 -->
 		
 	</div>
-	<input name="Incheckbox1" id="Incheckbox1" style="display: none">
-	<input name="Incheckbox2" id="Incheckbox2" style="display: none">
-	<input name="Incheckbox3" id="Incheckbox3" style="display: none">
-	<input name="Incheckbox4" id="Incheckbox4" style="display: none">
+	<input name="Incheckbox1" id="Incheckbox1" type="hidden">
+	<input name="Incheckbox2" id="Incheckbox2" type="hidden">
+	<input name="Incheckbox3" id="Incheckbox3" type="hidden">
+	<input name="Incheckbox4" id="Incheckbox4" type="hidden">
 				</div>
 							</div>
 							<br><br><br><br><br><br><br><br><br><br><br>
@@ -165,14 +166,14 @@ FormregiterBean bean = null;
 						
 					</div>
 			<!-- 	Stap1	 -->
-						<div class="col-lg-5 col-md-6 col-sm-12 col-xs-12">
+						<div class="col-lg-7 col-md-6 col-sm-12 col-xs-12">
 						<div class="panel panel-default card-view panel-refresh">
 							<div class="refresh-container">
 								<div class="la-anim-1"></div>
 							</div>
 							<div class="panel-heading">
 								<div class="pull-left">
-									<h6 class="panel-title txt-dark" >ระบบวิเคราะห์สินเชื่อ </h6>
+									<h6 class="panel-title txt-dark" > </h6>
 								
 								</div>
 								
@@ -188,7 +189,7 @@ FormregiterBean bean = null;
 			<div
 				class="col-xs-12 col-sm-2 col-md-2 col-md-offset-1 col-sm-offset-1 form-control-field">
 				<div class="form-group">
-					<label>คำนำหน้า</label><span class="require-red">*</span>
+					<label>คำนำหน้า</label><span class="require-red" style="color: red;">*</span>
 					<div
 						class="select select-center paddingTop-1 select-prefix select-diasbled">
 						<select class="fontSize-s fontFamily-thonburi  form-control"
@@ -203,7 +204,7 @@ FormregiterBean bean = null;
 			</div>
 			<div class="col-md-4 col-sm-4 col-xs-12 ">
 				<div class="form-group margin-3-col-name">
-					<label>ชื่อ</label><span class="require-red">*</span>
+					<label>ชื่อ</label><span class="require-red" style="color: red;">*</span>
 
 					<div class="input textAlign-left position-relative">
 						<input type="text" class="form-control" src="src" name="fNameTH"
@@ -214,7 +215,7 @@ FormregiterBean bean = null;
 			</div>
 			<div class="col-md-4 col-sm-4 col-xs-12">
 				<div class="form-group">
-					<label>นามสกุล</label><span class="require-red">*</span>
+					<label>นามสกุล</label><span class="require-red" style="color: red;">*</span>
 
 					<div class="input textAlign-left position-relative">
 						<input type="text"
@@ -227,11 +228,11 @@ FormregiterBean bean = null;
 		</div>
 		<div class="row">
 			<div
-				class="col-xs-12 col-sm-5 col-md-5 form-control-field col-md-offset-1 col-sm-offset-1">
+				class="col-xs-12 col-sm-5 col-md-7 form-control-field col-md-offset-1 col-sm-offset-1">
 				<div class="form-group">
-					<label>วันเกิด</label><span class="require-red">*</span>
+					<label>วันเกิด</label><span class="require-red" style="color: red;">*</span>
 					<div class="row" style="margin: 0px 0px;">
-						<div class="col-xs-3 col-sm-3 select select-center paddingTop-1 "
+						<div class="col-xs-4 col-sm-3 select select-center paddingTop-1 "
 							style="margin-right: 2.5%;">
 							<select class="fontSize-s fontFamily-thonburi form-control"
 								name="birthDay" id="birthDay">
@@ -270,7 +271,7 @@ FormregiterBean bean = null;
 							</select>
 						</div>
 						<div
-							class="col-xs-5 select select-center paddingTop-1 select-diasbled"
+							class="col-xs-4 select select-center paddingTop-1 select-diasbled"
 							style="width: 45%; margin-right: 2.5%;">
 							<select class="fontSize-s fontFamily-thonburi form-control"
 								name="birthMonth" id="birthMonth">
@@ -289,7 +290,7 @@ FormregiterBean bean = null;
 								<option value="ธันวาคม">ธันวาคม</option>
 							</select>
 						</div>
-						<div class="col-xs-3 col-sm-3 select select-center paddingTop-1 ">
+						<div class="col-xs-4 col-sm-3 select select-center paddingTop-1 ">
 							<select class="fontSize-s fontFamily-thonburi form-control"
 								name="birthYear" id="birthYear"><option value="">ปี</option>
 								<option label="2541" value="2541">2541</option>
@@ -417,9 +418,9 @@ FormregiterBean bean = null;
 
 				</div>
 			</div>
-			<div class="col-md-5 col-sm-5 col-xs-12">
+			<div class="col-md-3 col-sm-3 col-xs-12">
 				<div class="form-group">
-					<label>เลขบัตรประชาชน</label><span class="require-red">*</span>
+					<label>เลขบัตรประชาชน</label><span class="require-red" style="color: red;">*</span>
 					<div class="input textAlign-left position-relative">
 
 
@@ -437,7 +438,7 @@ FormregiterBean bean = null;
 			<div
 				class="col-md-5 col-sm-5 col-xs-12 col-md-offset-1 col-sm-offset-1">
 				<div class="form-group">
-					<label>เบอร์มือถือ</label><span class="require-red">*</span>
+					<label>เบอร์มือถือ</label><span class="require-red" style="color: red;">*</span>
 
 					<div class="input textAlign-left position-relative">
 						<input type="text" id="foMobilePhone"
@@ -450,7 +451,7 @@ FormregiterBean bean = null;
 			<div class="col-md-5 col-sm-5 col-xs-12">
 				<div class="form-group">
 					<div class="form-group">
-						<label>อีเมลติดต่อ</label><span class="require-red">*</span>
+						<label>อีเมลติดต่อ</label><span class="require-red" style="color: red;">*</span>
 
 						<div class="input textAlign-left position-relative">
 							<input type="email"
@@ -467,7 +468,7 @@ FormregiterBean bean = null;
 				class="col-md-5 col-sm-5 col-xs-12 col-md-offset-1 col-sm-offset-1">
 				<div class="form-group">
 					<label>ช่วงเวลาที่ให้ติดต่อ (จันทร์-ศุกร์)</label><span
-						class="require-red">*</span>
+						class="require-red" style="color: red;">*</span>
 					<div class="select select-center paddingTop-1 select-diasbled">
 						<select class="fontSize-s fontFamily-thonburi form-control"
 							name="availableTime" id="foAvailableTime">
@@ -495,7 +496,7 @@ FormregiterBean bean = null;
 				<div
 					class="col-md-5 col-md-offset-1  col-sm-5 col-xs-12 col-sm-offset-1">
 					<div class="form-group position-form">
-						<label>อาชีพปัจจุบัน</label><span class="require-red">*</span>
+						<label>อาชีพปัจจุบัน</label><span class="require-red" style="color: red;">*</span>
 						<div class="select select-center paddingTop-1 select-diasbled">
 							<select class="fontSize-s fontFamily-thonburi form-control"
 								name="job" id="foJob">
@@ -527,7 +528,7 @@ FormregiterBean bean = null;
 				<div class="col-md-5  col-sm-5 col-xs-12">
 					<!-- ngIf: uInfo.job!=0 && ((uInfo.job>=1 && uInfo.job<=12) || (uInfo.job>=17 && uInfo.job<=19)) -->
 					<div class="form-group ng-scope">
-						<label>รายได้ต่อเดือน</label><span class="require-red">*</span>
+						<label>รายได้ต่อเดือน</label><span class="require-red" style="color: red;">*</span>
 
 						<div class="input textAlign-left position-relative">
 							<input type="text" placeholder=""
@@ -549,7 +550,7 @@ FormregiterBean bean = null;
 							class="name-field-visible sm-name-field-invisible xs-name-field-invisible xxs-name-field-visible">รวมอายุงาน
 							(ปัจจุบัน+เก่า)</label><label
 							class="name-field-invisible sm-name-field-visible xs-name-field-visible xxs-name-field-invisible">รวมอายุงาน
-							(ปัจจุบัน+เก่า)</label><span class="require-red">*</span>
+							(ปัจจุบัน+เก่า)</label><span class="require-red" style="color: red;">*</span>
 						<div class="row" style="margin: 0px 0px;">
 							<div
 								class="col-xs-6 select select-center paddingTop-1 select-diasbled"
@@ -679,7 +680,7 @@ FormregiterBean bean = null;
 							</div>
 							<div class="panel-heading">
 								<div class="pull-left">
-									<h6 class="panel-title txt-dark" >ระบบวิเคราะห์สินเชื่อ </h6>
+									<h6 class="panel-title txt-dark" ></h6>
 								
 								</div>
 								
@@ -696,7 +697,7 @@ FormregiterBean bean = null;
 				<div
 					class="col-md-5 col-md-offset-1 col-sm-5 col-sm-offset-1 col-xs-12">
 					<div class="form-group">
-						<label>ชื่อบ้าน</label><span class="require-red">*</span>
+						<label>ชื่อบ้าน</label><span class="require-red" style="color: red;">*</span>
 						<div
 							class="input textAlign-left position-relative select-diasbled">
 							<input type="text"
@@ -707,7 +708,7 @@ FormregiterBean bean = null;
 				</div>
 				<div class="col-md-5 col-sm-5 col-xs-12">
 					<div class="form-group">
-						<label>จังหวัด</label><span class="require-red">*</span>
+						<label>จังหวัด</label><span class="require-red" style="color: red;">*</span>
 						<div class="select select-center paddingTop-1 select-diasbled">
 							<select class="fontSize-s fontFamily-thonburi form-control"
 								name="province" id="province">
@@ -721,7 +722,7 @@ FormregiterBean bean = null;
 				<div
 					class="col-md-5 col-md-offset-1 col-sm-5 col-sm-offset-1 col-xs-12">
 					<div class="form-group">
-						<label>อำเภอ</label><span class="require-red">*</span>
+						<label>อำเภอ</label><span class="require-red" style="color: red;">*</span>
 						<div class="input textAlign-left position-relative">
 							<select class="fontSize-s fontFamily-thonburi form-control"
 								name="amphur" id="amphur">
@@ -732,7 +733,7 @@ FormregiterBean bean = null;
 				</div>
 				<div class="col-md-5 col-sm-5 col-xs-12">
 					<div class="form-group">
-						<label>ตำบล</label><span class="require-red">*</span>
+						<label>ตำบล</label><span class="require-red" style="color: red;">*</span>
 						<div class="select select-center paddingTop-1 select-diasbled">
 							<select class="fontSize-s fontFamily-thonburi form-control"
 								name="district" id="district">
@@ -752,14 +753,14 @@ FormregiterBean bean = null;
 								</div>
 								</div>
 								
-								<div class="col-lg-5 col-md-6 col-sm-12 col-xs-12">
+								<div class="col-lg-7 col-md-6 col-sm-12 col-xs-12">
 									<div class="panel panel-default card-view panel-refresh">
 							<div class="refresh-container">
 								<div class="la-anim-1"></div>
 							</div>
 							<div class="panel-heading">
 								<div class="pull-left">
-									<h6 class="panel-title txt-dark" >ระบบวิเคราะห์สินเชื่อ </h6>
+									<h6 class="panel-title txt-dark" > </h6>
 								
 								</div>
 								
