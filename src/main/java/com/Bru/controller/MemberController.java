@@ -87,6 +87,11 @@ public class MemberController {
 		
 		return "admin/welcome";
 	}
+	@RequestMapping(value="/indexadmin2")
+	public String indexadmin2() {
+		
+		return "admin2/welcome";
+	}
 	@RequestMapping(value = "/gotologin")
 	public String login(String email, String password, HttpServletRequest request) {
 		String page = "";

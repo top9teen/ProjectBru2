@@ -6,7 +6,7 @@
 		<div class="mobile-only-brand pull-left">
 			<div class="nav-header pull-left">
 				<div class="logo-wrap">
-					<a href="indexadmin"> <img class="brand-img"
+					<a href="indexadmin2"> <img class="brand-img"
 						src="dist/img/logo.png" alt="brand" /> <span class="brand-text">ระบบสินเชื่อรถยนต์</span>
 					</a>
 				</div>
