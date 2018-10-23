@@ -183,7 +183,7 @@ p {
 					dataType : "json",
 					success : function(msg) {
 						console.log('Success')
-						$('#f3').append('<form action="gotoreg"><h3 align="center">ธนาคาร ไทยพาณิชย์</h3><div class="row"><div class="col-sm-4"><img alt="" src="dist/img/logo/kr3.jpg"style="height: 150px; width: 300px;"><br> <br> <br></div><div class="col-sm-4"><p>อัตราดอกเบี้ยเริ่มต้นอายุสัญญา</p><h2 style="color: green;" id="g3"></h2><input id="scabant" ></div><div class="col-sm-4" id="b3"><input type="hidden" name="typebank" value="sc1"></div></div></form>');
+						$('#f3').append('<form action="gotoreg"><h3 align="center">ธนาคาร ไทยพาณิชย์</h3><div class="row"><div class="col-sm-4"><img alt="" src="dist/img/logo/kr3.jpg"style="height: 150px; width: 300px;"><br> <br> <br></div><div class="col-sm-4"><p>อัตราดอกเบี้ยเริ่มต้นอายุสัญญา</p><h2 style="color: green;" id="g3"></h2><label id="scabant" ></label></div><div class="col-sm-4" id="b3"><input type="hidden" name="typebank" value="sc1"></div></div></form>');
 						
 						$('#scabant').text('วงเงินสูงสุด'+ msg.scPrice +'บาท');
 						$('#g3').text('<%=yebean.getYrPercent() %>'   + ' %');
