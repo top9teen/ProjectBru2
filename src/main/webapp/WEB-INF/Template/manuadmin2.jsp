@@ -303,7 +303,7 @@
 		<!-- Left Sidebar Menu -->
 		<div class="fixed-sidebar-left">
 			<ul class="nav navbar-nav side-nav nicescroll-bar">
-				<li class="navigation-header"><span>หลัก</span> <i
+				<li class="navigation-header"><span style="font-size: 14pt;">หลัก</span> <i
 					class="zmdi zmdi-more"></i></li>
 
 				<li><a href="listuser35" data-toggle="collapse"
@@ -345,14 +345,14 @@
 						<div class="clearfix"></div></a></li>
 
 				<li><hr class="light-grey-hr mb-10" /></li>
-				<li class="navigation-header"><span>รอง</span> <i
+				<li class="navigation-header"><span style="font-size: 14pt;">รอง</span> <i
 					class="zmdi zmdi-more"></i></li>
 				
 				<li><a href="productadmin335
 				
 				" data-toggle="collapse"
 					data-target="#form_dr"><div class="pull-left">
-							<i class="zmdi zmdi-edit mr-20"></i><span class="right-nav-text">ผู้ที่ค้างชำระ</span>
+							<i class=" icon-book-open mr-20"></i><span class="right-nav-text">ผู้ที่ค้างชำระ</span>
 						</div>
 						<div class="pull-right">
 						
@@ -363,7 +363,7 @@
 				
 				<li><a href="transfer35" data-toggle="collapse"
 					data-target="#form_dr"><div class="pull-left">
-							<i class="zmdi zmdi-edit mr-20"></i><span class="right-nav-text">ดูประวัติการโอนเงิน</span>
+							<i class="icon-notebook mr-20"></i><span class="right-nav-text">ดูประวัติการโอนเงิน</span>
 						</div>
 						<div class="pull-right">
 						
@@ -373,7 +373,20 @@
 			
 					<li><a href="addadmin35" data-toggle="collapse"
 					data-target="#form_dr"><div class="pull-left">
-							<i class="zmdi zmdi-edit mr-20"></i><span class="right-nav-text">เพิ่มAdmin</span>
+							<i class="icon-user-follow mr-20"></i><span class="right-nav-text">เพิ่มAdmin</span>
+						</div>
+						<div class="pull-right">
+						
+						</div>
+						<div class="clearfix"></div></a>
+				</li>
+			<li><hr class="light-grey-hr mb-10" /></li>
+				<li class="navigation-header"><span style="font-size: 14pt;">ออกรายงาน</span> <i
+					class="zmdi zmdi-more"></i></li>
+				
+				<li><a href="printuser" data-toggle="collapse"
+					data-target="#form_dr"><div class="pull-left">
+							<i class="icon-printer mr-20"></i><span class="right-nav-text">ปริ้นรหัสของทุกคน</span>
 						</div>
 						<div class="pull-right">
 						
@@ -381,8 +394,36 @@
 						<div class="clearfix"></div></a>
 				</li>
 			
-	
+				
+				<li><a href="printproduct" data-toggle="collapse"
+					data-target="#form_dr"><div class="pull-left">
+							<i class="icon-printer mr-20"></i><span class="right-nav-text">ปริ้นรายการทั้งหมด</span>
+						</div>
+						<div class="pull-right">
+						
+						</div>
+						<div class="clearfix"></div></a>
+				</li>
 			
+					<li><a href="printpro" data-toggle="collapse"
+					data-target="#form_dr"><div class="pull-left">
+							<i class="icon-printer mr-20"></i><span class="right-nav-text">ปริ้นรายการที่ผ่านอนุมัติ</span>
+						</div>
+						<div class="pull-right">
+						
+						</div>
+						<div class="clearfix"></div></a>
+				</li>
+	
+				<li><a href="printtran" data-toggle="collapse"
+					data-target="#form_dr"><div class="pull-left">
+							<i class="icon-printer mr-20"></i><span class="right-nav-text">ปริ้นประวัติการโอนเงิน</span>
+						</div>
+						<div class="pull-right">
+						
+						</div>
+						<div class="clearfix"></div></a>
+				</li>
 		</div>
 		<!-- /Left Sidebar Menu -->
 

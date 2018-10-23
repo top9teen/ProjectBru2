@@ -132,5 +132,83 @@ public class AdminController2 {
 
 		return "admin2/page4";
 	}
-	// end class   
+	
+	
+	// export 
+	@RequestMapping(value = "/printuser")
+	public String printuser(Model model ,HttpServletRequest request ) throws SQLException {
+	List<LoginBean> list  = new ArrayList<>();
+   list = loginDao.login22();
+ request.getSession().setAttribute("list", list);
+		return "admin2/printuser";
+	}
+	
+	@RequestMapping(value = "/printproduct")
+	public String printproduct(HttpServletRequest requst) throws SQLException {
+		List<FormregiterBean> list = new ArrayList<>();
+		list = selTableDao.selrell();
+		
+		requst.getSession().setAttribute("listUser", list);
+
+		return "admin2/printallproduct";
+	}
+	@RequestMapping(value = "/printtran")
+	public String printtran(HttpServletRequest requst) throws SQLException {
+		List<ReceiptBean> list  = new ArrayList<>();
+		
+		list = transferDao.Trens();
+		requst.getSession().setAttribute("list", list);
+			
+		return "admin2/printtran";
+	}
+	@RequestMapping(value = "/ckmo")
+	public String ckmo(HttpServletRequest requst,String d1,String m1 ,String y1) throws SQLException {
+		List<ReceiptBean> list  = new ArrayList<>();
+		int n = Integer.valueOf(d1);
+		int m = Integer.valueOf(y1);
+		if(d1.equals("0") && m1.equals("0") && y1.equals("0")) {
+			
+		} else  {
+			if(d1.equals("0") && m1.equals("0")) {
+				list = transferDao.Trens3(m);	
+			}else {
+				if(d1.equals("0")&& y1.equals("0") ) {
+					list = transferDao.Trens(m1);	
+				}else {
+					if(d1.equals("0")) {
+						list = transferDao.Trens(m1,m);	
+					}
+					else {
+						if(m1.equals("0") && y1.equals("0")) {
+							list = transferDao.Trens(n);	
+						}
+						else {
+							if(m1.equals("0")) {
+								list = transferDao.Trens(n,m);	
+							}
+							else {
+								if(y1.equals("0")) {
+									list = transferDao.Trens(n,m1);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		requst.getSession().setAttribute("list", list);
+			
+		return "admin2/printtran";
+	}
+	@RequestMapping(value = "/printpro")
+	public String printpro(HttpServletRequest request) throws SQLException {
+		List<FormregiterBean> list = new ArrayList<>();
+		
+		list=selTableDao.selre();
+		
+		request.getSession().setAttribute("list2", list);
+		return "admin2/printpro";
+	}
+	// end class    
 }

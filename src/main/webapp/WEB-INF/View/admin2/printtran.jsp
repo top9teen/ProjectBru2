@@ -58,13 +58,104 @@
 								<div class="pull-left">
 									<h6 class="panel-title txt-dark">รายการสินเชื่อ</h6>
 								</div>
+								
 								<div class="clearfix"></div>
 							</div>
 							<div class="panel-wrapper collapse in">
 								<div class="panel-body">
+								<div class="row">
+								<form action="ckmo">
+								
+								<div
+						class=" col-sm-2" >
+						<select class="fontSize-s fontFamily-thonburi  form-control"
+							name="d1" id="foPrefix">
+							<option value="0">ทั้งหมด</option>
+								<option value="1">01</option>
+								<option value="2">02</option>
+								<option value="3">03</option>
+								<option value="4">04</option>
+								<option value="5">05</option>
+								<option value="6">06</option>
+								<option value="7">07</option>
+								<option value="8">08</option>
+								<option value="9">09</option>
+								<option value="10">10</option>
+								<option value="11">11</option>
+								<option value="12">12</option>
+								<option value="13">13</option>
+								<option value="14">14</option>
+								<option value="15">15</option>
+								<option value="16">16</option>
+								<option value="17">17</option>
+								<option value="18">18</option>
+								<option value="19">19</option>
+								<option value="20">20</option>
+								<option value="21">21</option>
+								<option value="22">22</option>
+								<option value="23">23</option>
+								<option value="24">24</option>
+								<option value="25">25</option>
+								<option value="26">26</option>
+								<option value="27">27</option>
+								<option value="28">28</option>
+								<option value="29">29</option>
+								<option value="30">30</option>
+								<option value="31">31</option>
+						</select>
+					</div>
+								
+								
+									<div
+						class=" col-sm-3" >
+						<select class="fontSize-s fontFamily-thonburi  form-control"
+							name="m1" id="foPrefix">
+							<option value="0">เดือนทั้งหมด</option>
+								<option value="มกราคม">มกราคม</option>
+								<option value="กุมภาพันธ์">กุมภาพันธ์</option>
+								<option value="มีนาคม">มีนาคม</option>
+								<option value="เมษายน">เมษายน</option>
+								<option value="พฤษภาคม">พฤษภาคม</option>
+								<option value="มิถุนายน">มิถุนายน</option>
+								<option value="กรกฎาคม">กรกฎาคม</option>
+								<option value="สิงหาคม">สิงหาคม</option>
+								<option value="กันยายน">กันยายน</option>
+								<option value="ตุลาคม">ตุลาคม</option>
+								<option value="พฤศจิกายน">พฤศจิกายน</option>
+								<option value="ธันวาคม">ธันวาคม</option>
+						</select>
+					</div>
+						<div
+						class=" col-sm-2" >
+						<select class="fontSize-s fontFamily-thonburi  form-control"
+							name="y1" id="foPrefix">
+							<option value="0">ปีทั้งหมด</option>
+							<option value="2561">2561</option>
+							<option value="2562">2562</option>
+							<option value="2563">2563</option>
+							<option value="2564">2564</option>
+							<option value="2565">2565</option>
+							<option value="2566">2566</option>
+							<option value="2567">2567</option>
+							<option value="2568">2568</option>
+							<option value="2569">2569</option>
+							<option value="2570">2570</option>
+						</select>
+					</div>
+					<div
+					
+					
+						class=" col-sm-3" >
+						<button class="btn btn-success btn-outline btn-icon right-icon"><span>ยืนยัน</span> <i class="fa fa-check"></i> </button>
+					</div>
+						</form>
+								<!-- row -->
+								</div>
+								<!-- end row se -->
+								<br>
 									<div class="table-wrap">
 										<div class="table-responsive">
-												<table id="datable_2" class="table table-hover display  pb-30" >
+												<table id="example" class="table table-hover display  pb-30" >
 												<thead>
 													<tr>
 														<th >ลำดับ</th>
@@ -76,7 +167,7 @@
 														<th>แบงค์</th>
 														<th>จำนวนเงิน</th>
 														<th>วันเดือนปีที่จ่าย</th>
-														<th>ดูใบเสร็จ</th>
+														
 													</tr>
 												</thead>
 												<tfoot>
@@ -90,7 +181,7 @@
 														<th>แบงค์</th>
 														<th>จำนวนเงิน</th>
 														<th>วันเดือนปีที่จ่าย</th>
-														<th>ดูใบเสร็จ</th>
+														
 													</tr>
 												</tfoot>
 												<tbody>
@@ -109,9 +200,7 @@
 														<td><%=list.get(i).getReMonny()%></td>
 														<td><%=list.get(i).getReDay()%> / <%=list.get(i).getReMont()%>
 															/ <%=list.get(i).getReYrar()%></td>
-														<td ><button  class="btn btn-success btn-icon-anim btn-square"
-															onclick="gotoUpdateggggg('<%=list.get(i).getReId()%>')">ดู</button></td>
-													</tr>
+													
 													<%
 														}
 													%>
@@ -175,61 +264,25 @@
 
 		<!-- /Main Content -->
 
-	</div>
+	
 	<!-- /#wrapper -->
 
 	<!-- JavaScript -->
-<script type="text/javascript">
-	function gotoUpdateggggg(filter) {
-		 document.getElementById("regid").value = filter;
-		var simpleTestBean = { "xxx" :  $('#regid').val()};
-		
-		$.ajax({
-			type : "POST",
-			url : "/Tran",
-			data : JSON.stringify(simpleTestBean),
-			contentType : "application/json; charset=utf-8",
-			dataType : "json",
-			success : function(msg) {
-				console.log('Success')
-				$('#idtran').text('     เลขที่'+ msg.reYrar +'/' +msg.reId);
-				$('#day').text('  วันที่ '+msg.reDay + ' เดือน  ' + msg.reMont + ' พ.ศ  ' + msg.reYrar);
-				$('#nametran').text(
-						'  ชื่อ - นามสกุล  ' + msg.reName
-								);
-				$('#emailtran').text('  Email ' + msg.reEmail);
-				$('#yearcartran').text('  ปีรถ  ' + msg.reCaryear);
-				$('#cartran').text('  ยี่ห่อ  ' + msg.reCar);
-				$('#modeltran').text('  รุ่น  ' + msg.reCarmodel);
-				$('#monnytran').text(
-						'  เงินที่จ่าย ' + msg.reMonny+" บาทถ้วน");
-				$('#admintran').text(
-						'ผู้รับเงิน  ' + msg.reAdmin +"  ");
-			}
-		});
-	$("#Forms25").show('slow');
-	//$("#Forms25").onload="window.print()";
-	}
 
-			function printDiv(divName) {
-			     var printContents = document.getElementById(divName).innerHTML;
-			     var originalContents = document.body.innerHTML;
-			     document.body.innerHTML = printContents;
-			     window.print();
-			     document.body.innerHTML = originalContents;
-			}
-</script>
-  <!-- jQuery -->
+ <!-- jQuery -->
     <script src="vendors/bower_components/jquery/dist/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    
-	<!-- Data table JavaScript -->
-	<script src="vendors/bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
-	<script src="dist/js/dataTables-data.js"></script>
-	
-	<!-- Slimscroll JavaScript -->
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.flash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.print.min.js"></script>
+    <!-- Slimscroll JavaScript -->
 	<script src="dist/js/jquery.slimscroll.js"></script>
 	
 	<!-- Owl JavaScript -->
@@ -237,12 +290,20 @@
 	
 	<!-- Switchery JavaScript -->
 	<script src="vendors/bower_components/switchery/dist/switchery.min.js"></script>
-	
+		
+		<script src="dist/js/init.js"></script>
 	<!-- Fancy Dropdown JS -->
 	<script src="dist/js/dropdown-bootstrap-extended.js"></script>
-	
-	<!-- Init JavaScript -->
-	<script src="dist/js/init.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function() {
+	    $('#example').DataTable( {
+	        dom: 'Bfrtip',
+	        buttons: [
+	            'copy', 'csv', 'excel', 'pdf', 'print'
+	        ]
+	    } );
+	} );
+	</script>
 
 
 </body>

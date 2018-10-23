@@ -24,11 +24,7 @@
 	<%
 		list = (List<FormregiterBean>) request.getSession().getAttribute("list2");
 	%>
-		
-		<jsp:include page="../../Template/manuadmin.jsp"></jsp:include>
-		
-		
-			
+			<jsp:include page="../../Template/manuadmin2.jsp"></jsp:include>
 		<!-- Main Content -->
 		<div class="page-wrapper">
 			<div class="container-fluid">
@@ -64,7 +60,7 @@
 								<div class="panel-body">
 									<div class="table-wrap">
 										<div class="table-responsive">
-															<table id="datable_2" class="table table-hover display  pb-30" >
+												<table id="example" class="table table-hover display  pb-30" >
 												<thead>
 													<tr>
 														<th>ลำดับ</th>
@@ -76,8 +72,7 @@
 														<th>ยี่ห่อรถ</th>
 														<th>จำนวนเงินที่ต้องการ</th>
 														<th>วันที่สมัคร</th>
-														<th>คนอนุมัติ</th>
-														<th>ดูรายละเอียด</th>
+														
 													</tr>
 												</thead>
 												<tfoot>
@@ -91,8 +86,7 @@
 														<th>ยี่ห่อรถ</th>
 														<th>จำนวนเงินที่ต้องการ</th>
 														<th>วันที่สมัคร</th>
-														<th>คนอนุมัติ</th>
-														<th>ดูรายละเอียด</th>
+														
 													</tr>
 												</tfoot>
 												<tbody>
@@ -110,8 +104,7 @@
 														<td><%=list.get(i).getFoCarMake2() %></td>
 														<td><%=list.get(i).getFoLessmoney() %></td>
 														<td><%=list.get(i).getFoDate() %></td>
-														<td><%=list.get(i).getFoNamebank() %></td>
-														<td><button onclick="gotoUpdate('<%=list.get(i).getFoId()%>')" class="btn btn-success btn-icon-anim btn-square">เลือก</button></td>
+														
 													</tr>
 					<%
 						}
@@ -170,130 +163,20 @@
     <!-- /#wrapper -->
 	
 	<!-- JavaScript -->
-	<script type="text/javascript">
-		function gotoUpdate(filter) {
-			document.getElementById("regid").value = filter;
-			$("#Forms2").show('slow');
-			var simpleTestBean = {
-				"xxx" : $('#regid').val()
-			};
 
-			$.ajax({
-						type : "POST",
-						url : "/FFF",
-						data : JSON.stringify(simpleTestBean),
-						contentType : "application/json; charset=utf-8",
-						dataType : "json",
-						success : function(msg) {
-							console.log('Success')
-							$('#fNameTH').text(msg.foPrefix+"  "+msg.foFNameTH);
-							$('#lNameTH').text(msg.foLNameTH);
-							$('#mobilePhone').text(msg.foMobilePhone);
-							$('#birthDay').text( msg.foBirthDay+"/"+ msg.foBirthMonth+"/"+msg.foBirthYear);
-							$('#refID').text(msg.foRefID);
-							$('#email').text(msg.foEmail);
-							$('#propertyProjectName').text( msg.foPropertyProjectName);
-							$('#district').text(msg.foDistrict);
-							$('#amphur').text( msg.foAmphur);
-							$('#province').text(msg.foProvince);
-							$('#job').text(msg.foJob);
-							$('#salary').text( msg.foSalary + ' บาท');
-							$('#yearOfService').text(msg.foYearOfService + ' ปี  '+msg.foMonthOfService+ ' ปี  ');
-							$('#groupType').text(msg.foGroupType);
-							$('#carMake').text( msg.foCarMake);
-							$('#carMake2').text(msg.foCarMake2);
-							$('#lessmoney').text( msg.foLessmoney);
-							$('#lessyear').text( msg.foLessyear + ' ปี');
-							$('#bureauPaidedStatusPaid').text( msg.foBureauPaidedStatusPaid);
-							$('#availableTime').text(msg.foAvailableTime);
-							$('#checkbox1').text(msg.foCheckbox1);
-							$('#checkbox2').text(msg.foCheckbox2);
-							$('#checkbox3').text(msg.foCheckbox3);
-							$('#checkbox4').text(msg.foCheckbox4);
-							
-							if (msg.foRadio == '1') {
-								document.getElementById("regid").value = filter;
-								var simpleTestBean = {
-									"xxx" : $('#regid').val()
-								};
-								$
-										.ajax({
-											type : "POST",
-											url : "/MFD",
-											data : JSON
-													.stringify(simpleTestBean),
-											contentType : "application/json; charset=utf-8",
-											dataType : "json",
-											success : function(msg2) {
-									
-												$('#fNameTH2').text(
-														msg2.mePrefix2+"  "+msg2.meFname2);
-												$('#lNameTH2')
-														.text(
-																
-																		 msg2.meLname2);
-												$('#mobilePhone2')
-														.text(
-															 msg2.meTalaphone2);
-												$('#birthDay2')
-														.text(
-																' วันเกิดที่   '
-																		+ msg2.meBirthDay2 +' เดือน   '
-																		+ msg2.meBirthMonth2+' ปี   '
-																		+ msg2.meBirthYear2);
-												
-												$('#email2')
-														.text(
-																 msg2.meEmail2);
-												$('#job2')
-														.text(
-																 msg2.meJob2);
-												$('#salary2')
-														.text(
-																 msg2.meSalary2
-																		+ ' บาท ');
-												$('#yearOfService2')
-														.text(
-															
-																	msg2.meYearOfService2
-																		+ '  ปี  '+ msg2.meMonthOfService2
-																		+ ' เดือน  ');
-												$("#Forms2").show('slow');
-												
-											}
-										});
-
-							} else {
-								$('#fNameTH2').text("-");
-								$('#lNameTH2').text("-");
-								$('#mobilePhone2').text("-");
-								$('#birthDay2').text("-");
-								$('#email2').text("-");
-								$('#job2').text("-");
-								$('#salary2').text("-");
-								$('#yearOfService2').text("-");
-								$("#Forms2").show('slow');
-								
-							}
-
-						}
-					});
-
-		}
-
-	</script>
-    <!-- jQuery -->
-    <!-- jQuery -->
     <script src="vendors/bower_components/jquery/dist/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    
-	<!-- Data table JavaScript -->
-	<script src="vendors/bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
-	<script src="dist/js/dataTables-data.js"></script>
-	
-	<!-- Slimscroll JavaScript -->
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.flash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.print.min.js"></script>
+    <!-- Slimscroll JavaScript -->
 	<script src="dist/js/jquery.slimscroll.js"></script>
 	
 	<!-- Owl JavaScript -->
@@ -301,12 +184,21 @@
 	
 	<!-- Switchery JavaScript -->
 	<script src="vendors/bower_components/switchery/dist/switchery.min.js"></script>
-	
+		
+		<script src="dist/js/init.js"></script>
 	<!-- Fancy Dropdown JS -->
 	<script src="dist/js/dropdown-bootstrap-extended.js"></script>
-	
-	<!-- Init JavaScript -->
-	<script src="dist/js/init.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function() {
+	    $('#example').DataTable( {
+	        dom: 'Bfrtip',
+	        buttons: [
+	            'copy', 'csv', 'excel', 'pdf', 'print'
+	        ]
+	    } );
+	} );
+	</script>
+
 	
 	
 </body>

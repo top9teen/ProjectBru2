@@ -303,7 +303,7 @@
 		<!-- Left Sidebar Menu -->
 		<div class="fixed-sidebar-left">
 			<ul class="nav navbar-nav side-nav nicescroll-bar">
-				<li class="navigation-header"><span>หลัก</span> <i
+				<li class="navigation-header"><span style="font-size: 14pt;">หลัก</span> <i
 					class="zmdi zmdi-more"></i></li>
 
 				<li><a href="listuser" data-toggle="collapse"
@@ -345,7 +345,7 @@
 						<div class="clearfix"></div></a></li>
 
 				<li><hr class="light-grey-hr mb-10" /></li>
-				<li class="navigation-header"><span>รอง</span> <i
+				<li class="navigation-header"><span style="font-size: 14pt;">รอง</span> <i
 					class="zmdi zmdi-more"></i></li>
 				
 				<li><a href="productadmin3

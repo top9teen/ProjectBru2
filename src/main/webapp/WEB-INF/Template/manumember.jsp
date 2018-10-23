@@ -303,13 +303,13 @@
 		<!-- Left Sidebar Menu -->
 		<div class="fixed-sidebar-left">
 			<ul class="nav navbar-nav side-nav nicescroll-bar">
-				<li class="navigation-header"><span>Main</span> <i
+				<li class="navigation-header"><span style="font-size: 14pt;">หลัก</span> <i
 					class="zmdi zmdi-more"></i></li>
 
 				<li><a href="page1" data-toggle="collapse"
 					data-target="#ecom_dr"><div class="pull-left">
 							<i class="zmdi zmdi-shopping-basket mr-20"></i><span
-								class="right-nav-text">วิเคราะห์สินเชื่อ</span>
+								class="right-nav-text" >วิเคราะห์สินเชื่อ</span>
 						</div>
 						<div class="pull-right">
 							<span class="label label-primary">hot</span>
@@ -336,7 +336,7 @@
 						
 						<div class="clearfix"></div></a></li>
 				<li><hr class="light-grey-hr mb-10" /></li>
-				<li class="navigation-header"><span>component</span> <i
+				<li class="navigation-header"><span style="font-size: 14pt;">รอง</span> <i
 					class="zmdi zmdi-more"></i></li>
 				<li><a href="page3" data-toggle="collapse"
 					data-target="#ui_dr"><div class="pull-left">
@@ -373,7 +373,7 @@
 					class="zmdi zmdi-more"></i></li>
 				<li><a target="_blank" href="https://web.facebook.com/kritkrai.rakmit" data-toggle="collapse"
 					data-target="#pages_dr"><div class="pull-left">
-							<i class="zmdi zmdi-google-pages mr-20"></i><span
+							<i class=" icon-social-facebook mr-20"></i><span
 								class="right-nav-text">ติดต่อเราทาง Facebook</span>
 						</div>
 						

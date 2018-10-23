@@ -56,5 +56,10 @@ public class IndexController {
 		
 		return "index";
 	}
+	@RequestMapping(value="/bb")
+	public String bb() {
+		
+		return "test2";
+	}
 	// end class 
 }

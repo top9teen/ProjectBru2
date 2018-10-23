@@ -68,7 +68,7 @@
 								<div class="panel-body">
 									<div class="table-wrap">
 										<div class="table-responsive">
-											<table id="example" class="table table-hover display  pb-30 dataTable" >
+													<table id="datable_2" class="table table-hover display  pb-30" >
 												<thead>
 													<tr>
 														<th>ลำดับ</th>
@@ -158,7 +158,8 @@
 	
 	</script>
 	<!-- jQuery -->
- <script src="vendors/bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- jQuery -->
+    <script src="vendors/bower_components/jquery/dist/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -190,7 +191,8 @@
 	
 	<!-- Init JavaScript -->
 	<script src="dist/js/init.js"></script>
-
+	
+	
 
 </body>
 
