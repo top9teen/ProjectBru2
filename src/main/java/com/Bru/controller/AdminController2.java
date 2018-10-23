@@ -167,7 +167,7 @@ public class AdminController2 {
 		int n = Integer.valueOf(d1);
 		int m = Integer.valueOf(y1);
 		if(d1.equals("0") && m1.equals("0") && y1.equals("0")) {
-			
+			list = transferDao.Trens();
 		} else  {
 			if(d1.equals("0") && m1.equals("0")) {
 				list = transferDao.Trens3(m);	
