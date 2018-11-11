@@ -80,11 +80,11 @@ p {
 					<input type="hidden" value="<%=bean.getFoGroupType()%>"
 					id="groupType2" name="grop">
 					<input type="hidden" value="<%=bean.getFoLessmoney()%>"
-					id="groupType2" name="lessmon">
+					id="" name="lessmon">
 					<input type="hidden" value="<%=bean.getFoLessyear()%>"
 					id="groupType2" name="lessyre">
 					<input type="hidden" value="<%=bean.getFoReMonny()%>"
-					id="groupType2" name="remon">
+					id="" name="remon">
 					</div>
 			
 			</form>
