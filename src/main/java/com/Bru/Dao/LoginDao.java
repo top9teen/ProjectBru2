@@ -37,6 +37,7 @@ public class LoginDao {
 			bean.setLoPassword(rs.getString("lo_password"));
 			bean.setLoStatus(rs.getString("lo_id"));
 			bean.setLoStatus(rs.getString("lo_status"));
+			bean.setLoConfirm(rs.getString("lo_confirm"));
 			}
 
 	}
@@ -114,7 +115,7 @@ public void register (LoginBeanSimple beansim) throws SQLException{
 	Connection conn = con.openConnect();
 	
 	try {
-		sql.append(" INSERT INTO UserTable (lo_email,lo_password,lo_status)VALUES(?,?,'2') ");
+		sql.append(" INSERT INTO UserTable (lo_email,lo_password,lo_status,lo_confirm)VALUES(?,?,'2','1') ");
 		prepared = conn.prepareStatement(sql.toString());
 		prepared.setString(1,beansim.getEmail());
 		prepared.setString(2,beansim.getPassword());

@@ -5,6 +5,15 @@ public class LoginBean {
 	private String loEmail;
 	private String loPassword;
 	private String loStatus;
+	private String loConfirm;
+	
+	
+	public String getLoConfirm() {
+		return loConfirm;
+	}
+	public void setLoConfirm(String loConfirm) {
+		this.loConfirm = loConfirm;
+	}
 	public int getLoId() {
 		return loId;
 	}

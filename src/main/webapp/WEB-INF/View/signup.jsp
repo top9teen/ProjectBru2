@@ -17,7 +17,7 @@
 		<div class="wrapper  pa-0">
 			<header class="sp-header">
 				<div class="sp-logo-wrap pull-left">
-					<a href="index.html">
+					<a href="">
 						<img class="brand-img mr-10" src="dist/img/logo.png" alt="brand"/>
 						<span class="brand-text">สมัครสมาชิก</span>
 					</a>

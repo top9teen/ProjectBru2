@@ -78,37 +78,7 @@ public class SearchCarDao {
 	}
 
 	
-	public List<YearBean> findAll() throws SQLException{
-		
-		YearBean bean = new YearBean();
-		List<YearBean> list = new ArrayList<YearBean>();
-//		query master data
-		
-		ConnectDB con = new ConnectDB();
-		PreparedStatement prepared = null;
-		StringBuilder sql = new StringBuilder();
-		Connection conn = con.openConnect();
-
-		try {
-			sql.append(" SELECT * FROM year ");
-			prepared = conn.prepareStatement(sql.toString());
-			ResultSet rs = prepared.executeQuery();
-
-			while (rs.next()) {
-				bean = new YearBean();
-				bean.setYeYear(rs.getString("ye_year"));
-				list.add(bean);
-		
-			}
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
-		finally {
-			conn.close();
-		}
-		return list;
-	}
-	public List<CarBean> findAll(String year) throws SQLException {
+	public List<CarBean> findAll() throws SQLException{
 		
 		CarBean bean = new CarBean();
 		List<CarBean> list = new ArrayList<CarBean>();
@@ -120,9 +90,8 @@ public class SearchCarDao {
 		Connection conn = con.openConnect();
 
 		try {
-			sql.append(" SELECT * FROM car  WHERE ye_year = ?  ");
+			sql.append(" SELECT car_name FROM brand GROUP  BY car_name ");
 			prepared = conn.prepareStatement(sql.toString());
-			prepared.setString(1,year);
 			ResultSet rs = prepared.executeQuery();
 
 			while (rs.next()) {
@@ -139,7 +108,8 @@ public class SearchCarDao {
 		}
 		return list;
 	}
-public List<BrandBean> findAll(String year ,String brand) throws SQLException {
+
+public List<BrandBean> findAll(String brand) throws SQLException {
 		
 	BrandBean bean = new BrandBean();
 		List<BrandBean> list = new ArrayList<BrandBean>();
@@ -151,10 +121,9 @@ public List<BrandBean> findAll(String year ,String brand) throws SQLException {
 		Connection conn = con.openConnect();
 
 		try {
-			sql.append(" SELECT * FROM brand WHERE ye_year = ? AND car_name = ?  ");
+			sql.append(" SELECT br_name FROM brand WHERE  car_name = ?  GROUP BY br_name ");
 			prepared = conn.prepareStatement(sql.toString());
-			prepared.setString(1,year);
-			prepared.setString(2,brand);
+			prepared.setString(1,brand);
 			ResultSet rs = prepared.executeQuery();
 
 			while (rs.next()) {
@@ -172,6 +141,38 @@ public List<BrandBean> findAll(String year ,String brand) throws SQLException {
 		return list;
 	}
 	
+public List<YearBean> findAll(String year,String brand) throws SQLException {
+	
+	YearBean bean = new YearBean();
+		List<YearBean> list = new ArrayList<YearBean>();
+//		query master data
+		
+		ConnectDB con = new ConnectDB();
+		PreparedStatement prepared = null;
+		StringBuilder sql = new StringBuilder();
+		Connection conn = con.openConnect();
+
+		try {
+			sql.append(" SELECT ye_year FROM brand WHERE  car_name = ? AND br_name = ?  GROUP BY ye_year ");
+			prepared = conn.prepareStatement(sql.toString());
+			prepared.setString(1,brand);
+			prepared.setString(2,year);
+			ResultSet rs = prepared.executeQuery();
+
+			while (rs.next()) {
+				bean = new YearBean();
+				bean.setYeYear(rs.getString("ye_year"));
+				list.add(bean);
+		
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		finally {
+			conn.close();
+		}
+		return list;
+	}
 	//end class
 	
 }

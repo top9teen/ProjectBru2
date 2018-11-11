@@ -50,7 +50,7 @@
 	OnSubmit="return fncSubmit2();">
 						<h6 align="center"> กรุณาเลือกรถยนต์รุ่นของท่าน</h6>
 		
-			<div class="form-group">
+		<!-- 	<div class="form-group">
 				<label for="registration_year">ปีที่จดทะเบียน (ค.ศ.)<span
 					style="color: red;">* </span>:
 				</label> <select class="form-control btn dropdown-toggle btn-primary btn-outline" name="groupType" id="groupType"
@@ -58,7 +58,7 @@
 					<option value="">กรุณาเลือก</option>
 
 				</select>
-			</div>
+			</div> -->
 			
 			
 			<div class="form-group">
@@ -80,6 +80,15 @@
 					</optgroup>
 				</select>
 			</div>
+			<div class="form-group">
+				<label for="registration_year">ปีที่จดทะเบียน (ค.ศ.)<span
+					style="color: red;">* </span>:
+				</label> <select class="form-control btn dropdown-toggle btn-primary btn-outline" name="groupType" id="groupType"
+					list="groupTypeDropdown" listKey="value" listValue="name">
+					<option value="">กรุณาเลือก</option>
+
+				</select>
+			</div> 
 			
 			<div class="form-group">
 				<label for="brand">วงเงินที่ท่านต้องการ<span
@@ -174,61 +183,68 @@
 		anElement = new AutoNumeric("#monney");
 		
 		
+	
 		
 		$.ajax({
 			type : "GET",
-			url : "/year",
+			url : "/brand",
 			contentType : "application/json; charset=utf-8",
 			dataType : "json",
 			success : function(msg) {
 				console.log('Success')
 				for(var i=0; i<msg.length; i++) {
-					$('#groupType').append('<option value="' + msg[i].yeYear+ '">' + msg[i].yeYear + '</option>');
+					$('#brand').append('<option value="' + msg[i].carName+ '">' + msg[i].carName + '</option>');
+				/* 	$('#groupType').append('<option value="' + msg[i].yeYear+ '">' + msg[i].yeYear + '</option>'); */
+				
 				}
 				
 			}
-		});
+		}); 
 		
-		$('#groupType').change(function () {
-			$('#brand').empty();
+		$('#brand').change(function () {
+			$('#groupType').empty();
 			$('#carmodel').empty();
 		
-			var criteriaBean = { "year" :  $('#groupType').val()};
+			var criteriaBean = { "brand" :  $('#brand').val()};
 			
-			$.ajax({
-				type : "POST",
-				url : "/brand",
-				data: JSON.stringify(criteriaBean) ,
-				contentType : "application/json; charset=utf-8",
-				dataType : "json",
-				success : function(msg) {
-					console.log('Success')
-					$('#brand').append('<option value="'+'">' + "กรุณาเลือก" + '</option>');
-					$('#carmodel').append('<option value="'+'">' + "กรุณาเลือก" + '</option>');
-					for(var i=0; i<msg.length; i++) {
-						$('#brand').append('<option value="' + msg[i].carName+ '">' + msg[i].carName + '</option>');
-					}
-					
-				}
-			});
-		});
-
-		$('#brand').change(function(){
-			$('#carmodel').empty();
-			var criteriaBean = {"year" : $('#groupType').val() 
-								, "brand" : $('#brand').val() };
 			$.ajax({
 				type : "POST",
 				url : "/carmodel",
 				data: JSON.stringify(criteriaBean) ,
 				contentType : "application/json; charset=utf-8",
 				dataType : "json",
-
-			success : function(msg) {
+				success : function(msg) {
 					console.log('Success')
+					
+					$('#groupType').append('<option value="'+'">' + "กรุณาเลือก" + '</option>');
 					$('#carmodel').append('<option value="'+'">' + "กรุณาเลือก" + '</option>');
 					for(var i=0; i<msg.length; i++) {
 						$('#carmodel').append('<option value="' + msg[i].brName+ '">' + msg[i].brName + '</option>');
+						/* $('#carmodel').append('<option value="' + msg[i].carName+ '">' + msg[i].carName + '</option>'); */
+					}
+					
+				}
+			});
+		});
+
+		$('#carmodel').change(function(){
+			$('#groupType').empty();
+			var criteriaBean = {"year" : $('#carmodel').val() 
+								, "brand" : $('#brand').val() };
+			$.ajax({
+				type : "POST",
+				url : "/year",
+				data: JSON.stringify(criteriaBean) ,
+				contentType : "application/json; charset=utf-8",
+				dataType : "json",
+
+			success : function(msg) {
+					console.log('Success')
+					$('#groupType').append('<option value="'+'">' + "กรุณาเลือก" + '</option>');
+					
+					for(var i=0; i<msg.length; i++) {
+						/* $('#carmodel').append('<option value="' + msg[i].brName+ '">' + msg[i].brName + '</option>'); */
+						$('#groupType').append('<option value="' + msg[i].yeYear+ '">' + msg[i].yeYear + '</option>');
 					}
 					
 				}

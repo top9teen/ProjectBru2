@@ -46,30 +46,21 @@ public class SearchCarController {
 	@Autowired
 	CkDao ckDao;
 
-	@RequestMapping(value="/year")
-	public List<YearBean> xxx() throws SQLException{
+	@RequestMapping(value="/year", method = RequestMethod.POST)
+	public List<YearBean> xxx(@RequestBody CriteriaBean criteriaBean) throws SQLException{
 		List<YearBean> list = new ArrayList<YearBean>();
 	
-		list =searchCarDao.findAll();
+		list =searchCarDao.findAll(criteriaBean.getYear(),criteriaBean.getBrand());
 		return list;
 	}
 	
-	@RequestMapping(value="/brand", method = RequestMethod.POST)
-	public List<CarBean> brand(@RequestBody CriteriaBean criteriaBean) throws SQLException{
+	@RequestMapping(value="/brand")
+	public List<CarBean> brand() throws SQLException{
 		
 		List<CarBean> list = new ArrayList<>();
 		
-//		query master data
-	/*	for(int i=0; i<10; i++) {
-			bean = new BrandBean();
-			bean.setCarId(i);
-			bean.setCarName("Top"+i);
-			
-			list.add(bean);
-		}
-		
-		*/
-		list  = searchCarDao.findAll(criteriaBean.getYear());
+
+		list  = searchCarDao.findAll();
 		return list;
 	}
 	
@@ -78,7 +69,7 @@ public class SearchCarController {
 		
 		List<BrandBean> list = new ArrayList<>();
 
-		list  = searchCarDao.findAll(criteriaBean.getYear(), criteriaBean.getBrand());
+		list  = searchCarDao.findAll( criteriaBean.getBrand());
 		return list;
 	}
 	

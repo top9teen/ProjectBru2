@@ -101,26 +101,32 @@ public class MemberController {
 		beansim.setPassword(password);
 		try {
 			bean = loginDao.login(beansim);
-			if (bean.getLoEmail() != null) {
-				if (bean.getLoStatus().equals("3")) {
-					email1 = bean.getLoEmail();
-					page = "admin/welcome";
-				} else if (bean.getLoStatus().equals("2")) {
-					email1 = bean.getLoEmail();
-					page = "member/welcome";
-				
-				}
-				else if (bean.getLoStatus().equals("1")) {
-					email1 = bean.getLoEmail();
-					page = "admin2/welcome";
-				
-				}
+			
+			if(bean.getLoConfirm().equals("2") ) {
+				if (bean.getLoEmail() != null) {
+					if (bean.getLoStatus().equals("3")) {
+						email1 = bean.getLoEmail();
+						page = "admin/welcome";
+					} else if (bean.getLoStatus().equals("2")) {
+						email1 = bean.getLoEmail();
+						page = "member/welcome";
+					
+					}
+					else if (bean.getLoStatus().equals("1")) {
+						email1 = bean.getLoEmail();
+						page = "admin2/welcome";
+					
+					}
 
 
-			} else {
-				
-				page = "index";
+				} else {
+					
+					page = "index";
+				}
+			}else {
+				page = "Confirm";
 			}
+		
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
